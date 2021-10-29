@@ -1,6 +1,8 @@
 name: Ritam Bhaumik
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+title: Ritam Bhaumik
+description: My personal website
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
 - jekyll-remote-theme
