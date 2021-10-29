@@ -1,2 +1,3 @@
-  name: Ritam Bhaumik
-  markdown: kramdown
+name: Ritam Bhaumik
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
