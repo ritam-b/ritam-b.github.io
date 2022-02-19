@@ -20,7 +20,7 @@ a:hover {
     text-decoration: underline;
 }
 h1 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 h3 {
@@ -28,7 +28,7 @@ h3 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
-    font-size: 1.4em;
+    font-size: 1.3em;
     line-height: 1.3em;
     color: #333;
     text-align: justify;
@@ -36,7 +36,7 @@ p {
 }
 ul {
     list-style-type: circle;
-    font-size: 1.2em;
+    font-size: 1.1em;
     line-height: 1.3em;
     color: #333;
 }
