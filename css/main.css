@@ -31,10 +31,12 @@ p {
     font-size: 1.5em;
     line-height: 1.4em;
     color: #333;
+    text-align: justify;
+    text-justify: auto;
 }
 ul {
     list-style-type: circle;
-    font-size: 1.2em;
+    font-size: 1.5em;
     line-height: 1.4em;
     color: #333;
 }
