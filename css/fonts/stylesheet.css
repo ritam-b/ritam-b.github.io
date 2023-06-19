@@ -10,6 +10,7 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+    font-variant: normal;
 }
 
 @font-face {
@@ -38,6 +39,7 @@
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+    font-variant: small-caps;
 }
 
 @font-face {
