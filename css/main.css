@@ -30,6 +30,7 @@ h3 {
 p {
     font-size: 1.5em;
     font-family:'Fontin', 'Arial', 'Sans-Serif';
+    font-variant: normal;
     line-height: 1.4em;
     color: #333;
     text-align: justify;
