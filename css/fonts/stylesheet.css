@@ -2,6 +2,8 @@
     font-family: 'Fontin';
     src: url('../../css/fonts/css/fonts/Fontin-Regular.eot');
     src: url('../../css/fonts/Fontin-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../css/fonts/Fontin-Regular.ttf') format('truetype'),
+        url('../../css/fonts/Fontin-Regular.otf') format('opentype'),
         url('../../css/fonts/Fontin-Regular.woff2') format('woff2'),
         url('../../css/fonts/Fontin-Regular.woff') format('woff'),
         url('../../css/fonts/Fontin-Regular.svg#Fontin-Regular') format('svg');
@@ -14,6 +16,8 @@
     font-family: 'Fontin';
     src: url('../../css/fonts/Fontin-Italic.eot');
     src: url('../../css/fonts/Fontin-Italic.eot?#iefix') format('embedded-opentype'),
+        url('../../css/fonts/Fontin-Italic.ttf') format('truetype'),
+        url('../../css/fonts/Fontin-Italic.otf') format('opentype'),
         url('../../css/fonts/Fontin-Italic.woff2') format('woff2'),
         url('../../css/fonts/Fontin-Italic.woff') format('woff'),
         url('../../css/fonts/Fontin-Italic.svg#Fontin-Italic') format('svg');
@@ -26,6 +30,8 @@
     font-family: 'Fontin';
     src: url('../../css/fonts/Fontin-SmallCaps.eot');
     src: url('../../css/fonts/Fontin-SmallCaps.eot?#iefix') format('embedded-opentype'),
+        url('../../css/fonts/Fontin-SmallCaps.ttf') format('truetype'),
+        url('../../css/fonts/Fontin-SmallCaps.otf') format('opentype'),
         url('../../css/fonts/Fontin-SmallCaps.woff2') format('woff2'),
         url('../../css/fonts/Fontin-SmallCaps.woff') format('woff'),
         url('../../css/fonts/Fontin-SmallCaps.svg#Fontin-SmallCaps') format('svg');
@@ -38,6 +44,8 @@
     font-family: 'Fontin';
     src: url('../../css/fonts/Fontin-Bold.eot');
     src: url('../../css/fonts/Fontin-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../../css/fonts/Fontin-Bold.ttf') format('truetype'),
+        url('../../css/fonts/Fontin-Bold.otf') format('opentype'),
         url('../../css/fonts/Fontin-Bold.woff2') format('woff2'),
         url('../../css/fonts/Fontin-Bold.woff') format('woff'),
         url('../../css/fonts/Fontin-Bold.svg#Fontin-Bold') format('svg');
