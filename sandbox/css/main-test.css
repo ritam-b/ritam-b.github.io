@@ -12,40 +12,39 @@ nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
-nav a {
+a {
     text-decoration: none;
-    color: #999;
+    color: #eba4d9;
 }
 nav a, footer a {
-    text-decoration: none;
-    color: #a65390;
+    color: #d9b657;
 }
 a:hover {
     text-decoration: underline;
 }
 h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     font-family:'Fontin', 'Arial', 'Sans-Serif';
     font-variant: small-caps;
 }
 h3 {
-    font-size: 2em;
+    font-size: 1.7em;
     font-family:'Fontin', 'Arial', 'Sans-Serif';
     font-variant: small-caps;
 }
 p {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-family:'Fontin', 'Arial', 'Sans-Serif';
     font-variant: normal;
-    line-height: 1.4em;
+    line-height: 1.1em;
     color: #333;
     text-align: justify;
     text-justify: auto;
 }
 ul {
     list-style-type: circle;
-    font-size: 1.5em;
-    line-height: 1.4em;
+    font-size: 1.3em;
+    line-height: 1.1em;
     color: #333;
 }
 footer {
