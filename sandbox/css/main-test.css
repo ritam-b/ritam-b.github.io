@@ -40,7 +40,7 @@ h1 {
     font-variant: small-caps;
 }
 
-h3 {
+h2 {
     font-size: 1.7em;
     font-family: 'Fontin', 'Arial', 'Sans-Serif';
     font-variant: small-caps;
@@ -50,7 +50,7 @@ p {
     font-size: 1.3em;
     font-family: 'Fontin', 'Arial', 'Sans-Serif';
     font-variant: normal;
-    line-height: 1.1em;
+    line-height: 1.2em;
     color: #333;
     text-justify: auto;
 }
@@ -58,7 +58,7 @@ p {
 ul {
     list-style-type: circle;
     font-size: 1.3em;
-    line-height: 1.1em;
+    line-height: 1.2em;
     color: #333;
 }
 

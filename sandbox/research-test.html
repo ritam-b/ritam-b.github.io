@@ -6,105 +6,129 @@ section2: Preprints
 ---
 <div class="blurb">
 	<h1>{{ page.title }}</h1>
-  <p>My primary research interest is the provable security analysis of symmetric-key cryptographic modes using combinatorial techniques. My doctoral research focused on provable security against a classical adversary. At Inria, I started exploring the exciting new field of provable security against a quantum adversary, as part of the ERC project <a href="https://project.inria.fr/quasymodo/" target=_blank" rel="noopener noreferrer">QUASYModo</a>. At present I am studying proof frameworks for adapting classical counting techniques in post-quantum security proofs.</p>
-  <p>My complete academic CV (last updated in April 2024) can be found <a href="/ritam_CV-apr24-2.pdf" target="_blank" rel="noopener noreferrer">here</a>.</p>
-  <p>You can also visit my DBLP page <a href="https://dblp.org/pid/167/3093.html" target="_blank" rel="noopener noreferrer">here.</a></p>
-    <h3>{{ page.section1 }}</h3>
+	<p>My primary research interest is the provable security analysis of symmetric-key cryptographic modes using
+		combinatorial techniques. My doctoral research focused on provable security against a classical adversary. At
+		Inria, I started exploring the exciting new field of provable security against a quantum adversary, as part of
+		the ERC project <a href="https://project.inria.fr/quasymodo/" target=_blank"
+			rel="noopener noreferrer">QUASYModo</a>. At present I am studying proof frameworks for adapting classical
+		counting techniques in post-quantum security proofs.</p>
+	<p>My complete academic CV (last updated in September 2024) can be found here: <a href="../files/ritam-CV-sep24.pdf"
+			target="_blank" rel="noopener noreferrer">[PDF] link to CV</a>. My publications are also listed on <a
+			href="https://dblp.org/pid/167/3093.html" target="_blank" rel="noopener noreferrer"> my DBLP page</a></p>.
+	<h2>{{ page.section1 }}</h2>
 	{% include pub_entry_new.html
-		title="Provably Secure Online Authenticated Encryption and Bidirectional Online Channel"
-		venue="Selected Areas in Cryptography '24"
-		coauthors="Arghya Bhattacharjee, Daniel Collins and Mridul Nandi"
+	title="Block Cipher Doubling for a Post-Quantum World"
+	venue="Communications in Cryptology 1(3)"
+	coauthors="André Chailloux, Paul Frixons, Bart Mennink and María Naya-Plasencia"
 	%}
 	{% include pub_entry_new.html
-		title="The Committing Security of MACs with Applications to Generic Composition"
-		venue="Crypto '24"
-		coauthors="Bishwajit Chakraborty, Wonseok Choi, Avijit Dutta, Jérôme Govinden and Yaobin Shen"
+	title="Mind the Bad Norms: Revisiting Compressed Oracle-based Quantum Indistinguishability Proofs"
+	venue="Asiacrypt '24"
+	coauthors="Benoît Cogliati, Jordan Ethan and Ashwin Jha"
+	%}
+	{% include pub_entry_new.html
+	title="Efficient Variants of TNT with BBB Security"
+	venue="ProvSec '24"
+	coauthors="Bishwajit Chakraborty, Wonseok Choi, Avijit Dutta, Cuauhtemoc Mancillas López, Hrithik Nandi and Yaobin
+	Shen"
+	%}
+	{% include pub_entry_new.html
+	title="Indifferentiability of Confusion-Diffusion Networks"
+	venue="SCN '24"
+	coauthors="Mridul Nandi, Sayantan Paul and Abishanka Saha"
+	%}
+	{% include pub_entry_new.html
+	title="Provably Secure Online Authenticated Encryption and Bidirectional Online Channel"
+	venue="SAC '24"
+	coauthors="Arghya Bhattacharjee, Daniel Collins and Mridul Nandi"
 	%}
 	{% include pub_entry.html
-		title="BBB-Security for 5-Round Even-Mansour-Based Key-Alternating Feistel Ciphers"
-		venue="Design, Codes and Cryptography"
-		coauthors="Arghya Bhattacharjee, Avijit Dutta, Mridul Nandi and Anik Raychaudhuri"
+	title="The Committing Security of MACs with Applications to Generic Composition"
+	venue="Crypto '24"
+	coauthors="Bishwajit Chakraborty, Wonseok Choi, Avijit Dutta, Jérôme Govinden and Yaobin Shen"
 	%}
 	{% include pub_entry.html
-		title="On Quantum-Secure Compressing Pseudorandom Functions"
-		venue="Asiacrypt '23"
-		coauthors="Benoît Cogliati, Jordan Ethan and Ashwin Jha"
+	title="On Quantum-Secure Compressing Pseudorandom Functions"
+	venue="Asiacrypt '23"
+	coauthors="Benoît Cogliati, Jordan Ethan and Ashwin Jha"
 	%}
 	{% include pub_entry.html
-		title="PAE: Towards More Efficient and BBB-secure AE From a Single Public Permutation"
-		venue="ICICS '23"
-		coauthors="Arghya Bhattacharjee, Avijit Dutta and Eik List"
+	title="BBB-Security for 5-Round Even-Mansour-Based Key-Alternating Feistel Ciphers"
+	venue="Designs, Codes and Cryptography 92(1)"
+	coauthors="Arghya Bhattacharjee, Avijit Dutta, Mridul Nandi and Anik Raychaudhuri"
 	%}
 	{% include pub_entry.html
-		title="Revisiting the Indifferentiability of the Sum of Permutations"
-		venue="Crypto '23"
-		coauthors="Aldo Gunsing, Ashwin Jha, Bart Mennink and Yaobin Shen"
+	title="PAE: Towards More Efficient and BBB-secure AE From a Single Public Permutation"
+	venue="ICICS '23"
+	coauthors="Arghya Bhattacharjee, Avijit Dutta and Eik List"
 	%}
 	{% include pub_entry.html
-		title="Offset-Based BBB-Secure Tweakable Block-ciphers with Updatable Caches"
-		venue="Indocrypt '22"
-		coauthors="Arghya Bhattacharjee and Mridul Nandi"
+	title="Revisiting the Indifferentiability of the Sum of Permutations"
+	venue="Crypto '23"
+	coauthors="Aldo Gunsing, Ashwin Jha, Bart Mennink and Yaobin Shen"
 	%}
 	{% include pub_entry.html
-		title="A Sponge-Based PRF with Good Multi-user Security"
-		venue="Selected Areas in Cryptography '22"
-		coauthors="Arghya Bhattacharjee and Mridul Nandi"
+	title="Offset-Based BBB-Secure Tweakable Block-ciphers with Updatable Caches"
+	venue="Indocrypt '22"
+	coauthors="Arghya Bhattacharjee and Mridul Nandi"
 	%}
 	{% include pub_entry.html
-		title="Improved indifferentiability security proof for 3-round tweakable Luby-Rackoff"
-		venue="Design, Codes and Cryptography"
-		coauthors="Mridul Nandi and Anik Raychaudhuri"
+	title="A Sponge-Based PRF with Good Multi-user Security"
+	venue="SAC '22"
+	coauthors="Arghya Bhattacharjee and Mridul Nandi"
 	%}
 	{% include pub_entry.html
-		title="QCB: Efficient Quantum-Secure Authenticated Encryption"
-		venue="Asiacrypt '21"
-		coauthors="Xavier Bonnetain, André Chailloux, Gaëtan Leurent, María Naya-Plasencia, André Schrottenloher and Yannick Seurin"
+	title="Improved indifferentiability security proof for 3-round tweakable Luby-Rackoff"
+	venue="Designs, Codes and Cryptography 89(10)"
+	coauthors="Mridul Nandi and Anik Raychaudhuri"
 	%}
 	{% include pub_entry.html
-		title="ZCZ - Achieving n-bit SPRP Security with a Minimal Number of Tweakable-Block-Cipher Calls"
-		venue="Asiacrypt '18"
-		coauthors="Eik List and Mridul Nandi"
+	title="QCB: Efficient Quantum-Secure Authenticated Encryption"
+	venue="Asiacrypt '21"
+	coauthors="Xavier Bonnetain, André Chailloux, Gaëtan Leurent, María Naya-Plasencia, André Schrottenloher and Yannick
+	Seurin"
 	%}
 	{% include pub_entry.html
-		title="Turning Online Ciphers Off"
-		venue="Transactions on Symmetric Cryptology"
-		coauthors="Elena Andreeva, Guy Barwell, Mridul Nandi, Dan Page and Martijn Stam"
+	title="ZCZ - Achieving n-bit SPRP Security with a Minimal Number of Tweakable-Block-Cipher Calls"
+	venue="Asiacrypt '18"
+	coauthors="Eik List and Mridul Nandi"
 	%}
 	{% include pub_entry.html
-		title="Improved Security for OCB3"
-		venue="Asiacrypt '17"
-		coauthors="Mridul Nandi"
+	title="Turning Online Ciphers Off"
+	venue="Transactions on Symmetric Cryptology 2017(2)"
+	coauthors="Elena Andreeva, Guy Barwell, Mridul Nandi, Dan Page and Martijn Stam"
 	%}
 	{% include pub_entry.html
-		title="The Iterated Random Function Problem"
-		venue="Asiacrypt '17"
-		coauthors="Nilanjan Datta, Avijit Dutta, Nicky Mouha and Mridul Nandi"
+	title="Improved Security for OCB3"
+	venue="Asiacrypt '17"
+	coauthors="Mridul Nandi"
 	%}
 	{% include pub_entry.html
-		title="OleF: an Inverse-Free Online Cipher"
-		venue="Transactions on Symmetric Cryptology"
-		coauthors="Mridul Nandi"
+	title="The Iterated Random Function Problem"
+	venue="Asiacrypt '17"
+	coauthors="Nilanjan Datta, Avijit Dutta, Nicky Mouha and Mridul Nandi"
 	%}
 	{% include pub_entry.html
-		title="An Inverse-Free Single-Keyed Tweakable Enciphering Scheme"
-		venue="Asiacrypt '15"
-		coauthors="Mridul Nandi"
+	title="OleF: an Inverse-Free Online Cipher"
+	venue="Transactions on Symmetric Cryptology 2016(2)"
+	coauthors="Mridul Nandi"
 	%}
-    <h3>{{ page.section2 }}</h3>
+	{% include pub_entry.html
+	title="An Inverse-Free Single-Keyed Tweakable Enciphering Scheme"
+	venue="Asiacrypt '15"
+	coauthors="Mridul Nandi"
+	%}
+	<h3>{{ page.section2 }}</h3>
 	{% include preprint_entry.html
-		title="BBB PRP Security of the Lai-Massey Mode"
-		coauthors="Mohammad Amin Raeisi"
+	title="Universal Context Commitment without Ciphertext Expansion"
+	coauthors="Arghya Bhattacharjee and Chandranan Dhar"
 	%}
 	{% include preprint_entry.html
-		title="Indifferentiability of Confusion-Diffusion Networks"
-		coauthors="Mridul Nandi, Sayantan Paul and Abishanka Saha"
+	title="BBB PRP Security of the Lai-Massey Mode"
+	coauthors="Mohammad Amin Raeisi"
 	%}
 	{% include preprint_entry.html
-		title="Indifferentiability of 6-round Feistel"
-		coauthors="Mridul Nandi, Sayantan Paul and Abishanka Saha"
-	%}
-	{% include preprint_entry.html
-		title="Block-cipher Doubling for a Post-Quantum World"
-		coauthors="André Chailloux, Paul Frixons, Bart Mennink and María Naya-Plasencia"
+	title="Indifferentiability of 6-round Feistel"
+	coauthors="Mridul Nandi, Sayantan Paul and Abishanka Saha"
 	%}
 </div><!-- /.blurb -->
