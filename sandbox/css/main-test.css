@@ -50,7 +50,7 @@ p {
     font-size: 1.3em;
     font-family: 'Fontin', 'Arial', 'Sans-Serif';
     font-variant: normal;
-    line-height: 1.2em;
+    line-height: 1.3em;
     color: #333;
     text-justify: auto;
 }
@@ -58,7 +58,7 @@ p {
 ul {
     list-style-type: circle;
     font-size: 1.3em;
-    line-height: 1.2em;
+    line-height: 1.3em;
     color: #333;
 }
 
