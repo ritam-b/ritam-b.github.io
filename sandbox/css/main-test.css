@@ -22,9 +22,12 @@ a {
     color: #b3549b;
 }
 
-nav a,
-footer a {
+nav a {
     color: #9f802a;
+}
+
+footer a {
+    color: #736335;
 }
 
 a:hover {
@@ -49,7 +52,6 @@ p {
     font-variant: normal;
     line-height: 1.1em;
     color: #333;
-    text-align: justify;
     text-justify: auto;
 }
 
