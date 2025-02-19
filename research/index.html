@@ -12,33 +12,38 @@ section2: Preprints
 		the ERC project <a href="https://project.inria.fr/quasymodo/" target="_blank"
 			rel="noopener noreferrer">QUASYModo</a>. At present I am studying proof frameworks for adapting classical
 		counting techniques in post-quantum security proofs.</p>
-	<p>My complete academic CV (last updated in September 2024) can be found here: <a href="../files/ritam-CV-sep24.pdf"
+	<p>My complete academic CV (last updated in February 2025) can be found here: <a href="../files/ritam-CV-feb25.pdf"
 			target="_blank" rel="noopener noreferrer">[PDF] link to CV</a>. My publications are also listed on <a
 			href="https://dblp.org/pid/167/3093.html" target="_blank" rel="noopener noreferrer"> my DBLP page</a>.</p>
 	<h2>{{ page.section1 }}</h2>
-	{% include pub_entry_new.html
+	{% include pub_entry.html
+	title="Building a BBB Pseudorandom Permutation using Lai-Massey Networks"
+	venue="Communications in Cryptology 1(4)"
+	coauthors="Mohammad Amin Raeisi"
+	%}
+	{% include pub_entry.html
 	title="Block Cipher Doubling for a Post-Quantum World"
 	venue="Communications in Cryptology 1(3)"
 	coauthors="André Chailloux, Paul Frixons, Bart Mennink and María Naya-Plasencia"
 	%}
-	{% include pub_entry_new.html
+	{% include pub_entry.html
 	title="Mind the Bad Norms: Revisiting Compressed Oracle-based Quantum Indistinguishability Proofs"
 	venue="Asiacrypt '24"
 	coauthors="Benoît Cogliati, Jordan Ethan and Ashwin Jha"
 	%}
-	{% include pub_entry_new.html
+	{% include pub_entry.html
 	title="Efficient Variants of TNT with BBB Security"
 	venue="ProvSec '24"
 	coauthors="Bishwajit Chakraborty, Wonseok Choi, Avijit Dutta, Cuauhtemoc Mancillas López, Hrithik Nandi and Yaobin
 	Shen"
 	%}
-	{% include pub_entry_new.html
+	{% include pub_entry.html
 	title="Indifferentiability of Confusion-Diffusion Networks"
 	venue="SCN '24"
 	coauthors="Mridul Nandi, Sayantan Paul and Abishanka Saha"
 	%}
 	{% include pub_entry_new.html
-	title="Provably Secure Online Authenticated Encryption and Bidirectional Online Channel"
+	title="Provably Secure Online Authenticated Encryption and Bidirectional Online Channels"
 	venue="SAC '24"
 	coauthors="Arghya Bhattacharjee, Daniel Collins and Mridul Nandi"
 	%}
@@ -118,14 +123,10 @@ section2: Preprints
 	venue="Asiacrypt '15"
 	coauthors="Mridul Nandi"
 	%}
-	<h3>{{ page.section2 }}</h3>
+	<h2>{{ page.section2 }}</h2>
 	{% include preprint_entry.html
 	title="Universal Context Commitment without Ciphertext Expansion"
 	coauthors="Arghya Bhattacharjee and Chandranan Dhar"
-	%}
-	{% include preprint_entry.html
-	title="BBB PRP Security of the Lai-Massey Mode"
-	coauthors="Mohammad Amin Raeisi"
 	%}
 	{% include preprint_entry.html
 	title="Indifferentiability of 6-round Feistel"
