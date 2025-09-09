@@ -2,7 +2,7 @@
 title: Research
 layout: default
 section1: Publications
-section2: Preprints
+section2: Notes and Preprints
 ---
 <div class="blurb">
 	<h1>{{ page.title }}</h1>
@@ -12,10 +12,20 @@ section2: Preprints
 		the ERC project <a href="https://project.inria.fr/quasymodo/" target="_blank"
 			rel="noopener noreferrer">QUASYModo</a>. At present I am studying proof frameworks for adapting classical
 		counting techniques in post-quantum security proofs.</p>
-	<p>My complete academic CV (last updated in April 2025) can be found here: <a href="../files/ritam-CV-apr25-a.pdf"
+	<p>My complete academic CV (last updated in September 2025) can be found here: <a href="../files/ritam-CV-sep25-a.pdf"
 			target="_blank" rel="noopener noreferrer">[PDF] link to CV</a>. My publications are also listed on <a
 			href="https://dblp.org/pid/167/3093.html" target="_blank" rel="noopener noreferrer"> my DBLP page</a>.</p>
 	<h2>{{ page.section1 }}</h2>
+	{% include pub_entry.html
+	title="Post-quantum Security of Key-Alternating Feistel Ciphers"
+	venue="Asiacrypt '25"
+	coauthors="Jyotirmoy Basak, Amit Kumar Chauhan, Ravindra Jejurikar, Ashwin Jha, Anandarup Roy, André Schrottenloher and Suprita Talnikar"
+	%}
+	{% include pub_entry.html
+	title="Cryptographic Treatment of Key Control Security In Light of NIST SP 800-108"
+	venue="Crypto '25"
+	coauthors="Avijit Dutta, Akiko Inoue, Tetsu Iwata, Ashwin Jha, Kazuhiko Minematsu, Mridul Nandi, Yu Sasaki, Meltem Sönmez Turan and Stefano Tessaro"
+	%}
 	{% include pub_entry.html
 	title="Building a BBB Pseudorandom Permutation using Lai-Massey Networks"
 	venue="Communications in Cryptology 1(4)"
@@ -125,11 +135,23 @@ section2: Preprints
 	%}
 	<h2>{{ page.section2 }}</h2>
 	{% include preprint_entry.html
+	title="A Note on Feedback-PRF Mode of KDF from NIST SP 800-108"
+	coauthors="Avijit Dutta, Tetsu Iwata, Ashwin Jha, Kazuhiko Minematsu, Mridul Nandi, Yu Sasaki, Meltem Sönmez Turan and Stefano Tessaro"
+	%}
+	{% include preprint_entry.html
+	title="Pencil: A Domain-Extended BBB PRF for Strengthening GCM and More"
+	coauthors="Jean Paul Degabriele"
+	%}
+	{% include preprint_entry.html
+	title="BBB Secure Large-Tweak TBC from Ideal Block Ciphers"
+	coauthors="Arghya Bhattacharjee, Nilanjan Datta, Avijit Dutta, Shibam Ghosh and Sougata Mandal"
+	%}
+	{% include preprint_entry.html
 	title="Universal Context Commitment without Ciphertext Expansion"
 	coauthors="Arghya Bhattacharjee and Chandranan Dhar"
 	%}
 	{% include preprint_entry.html
 	title="Indifferentiability of 6-round Feistel"
-	coauthors="Mridul Nandi, Sayantan Paul and Abishanka Saha"
+	coauthors="Ashwin Jha, Mridul Nandi, Sayantan Paul and Abishanka Saha"
 	%}
 </div><!-- /.blurb -->
