@@ -1,5 +1,25 @@
 name: Ritam Bhaumik
+title: Ritam Bhaumik
+author: Ritam Bhaumik
+description: >-
+  Ritam Bhaumik is a Senior Researcher at the Cryptography Research Center,
+  Technology Innovation Institute (TII), Abu Dhabi, working on classical and
+  post-quantum symmetric-key cryptography.
+url: https://ritam-b.github.io
+
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
-title: Ritam Bhaumik
-description: My personal website
+
+# Default Open Graph / Twitter preview image for every page (used by jekyll-seo-tag)
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: /images/photo-for-website.jpg
+        width: 668
+        height: 782
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
