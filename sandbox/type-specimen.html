@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Type specimen · Treatise design</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Cormorant+Garamond:ital@0;1&family=Sorts+Mill+Goudy:ital@0;1&display=swap">
+	<style>
+		:root { --paper:#f2e8d2; --ink:#33281b; --ink2:#6f5e45; --rub:#9a3b25; --rule:#c7b489; }
+		@media (prefers-color-scheme: dark) {
+			:root { --paper:#181310; --ink:#e8dcc2; --ink2:#b6a684; --rub:#d0623f; --rule:#4a3f2e; }
+		}
+		body { margin:0; background:var(--paper); color:var(--ink); padding:40px 24px 80px;
+			font-family:'EB Garamond',serif; }
+		.wrap { max-width:720px; margin:0 auto; }
+		h1 { font-family:'IM Fell English SC',serif; font-weight:400; letter-spacing:.08em;
+			font-size:40px; text-align:center; margin:0 0 6px; }
+		.sub { text-align:center; color:var(--ink2); font-style:italic; margin:0 0 36px; }
+		.rule { border:0; border-top:1px solid var(--rule); margin:34px 0; }
+		.label { font-family:'IM Fell English SC',serif; font-size:16px; letter-spacing:.08em;
+			color:var(--rub); margin:0 0 6px; }
+		.note { font-size:14px; color:var(--ink2); font-style:italic; margin:0 0 12px; }
+		.spec { font-size:20px; line-height:1.6; text-align:justify; hyphens:auto; margin:0; }
+		.f-eb { font-family:'EB Garamond',serif; }
+		.f-fell { font-family:'IM Fell English',serif; }
+		.f-corm { font-family:'Cormorant Garamond',serif; }
+		.f-goudy { font-family:'Sorts Mill Goudy',serif; }
+		.masthead-demo { text-align:center; margin:8px 0 4px; }
+		.m-fell { font-family:'IM Fell English SC',serif; font-size:44px; letter-spacing:.1em; }
+		.m-eb { font-family:'EB Garamond',serif; font-variant:small-caps; font-weight:600;
+			font-size:44px; letter-spacing:.06em; }
+	</style>
+</head>
+
+<body>
+	<div class="wrap">
+		<h1>A Note on Lettering</h1>
+		<p class="sub">the same passage set in four old-style faces — which should carry the body?</p>
+
+		<p class="label">Masthead — IM Fell English (small caps)</p>
+		<div class="masthead-demo m-fell">Ritam Bhaumik</div>
+		<p class="label" style="margin-top:20px;">Masthead — EB Garamond (small caps)</p>
+		<div class="masthead-demo m-eb">Ritam Bhaumik</div>
+
+		<hr class="rule">
+
+		<p class="label">Body in EB Garamond <span style="color:var(--ink2);font-family:'EB Garamond';">— recommended</span></p>
+		<p class="note">Clean, even colour on the page; unmistakably old-style; comfortable for long reading.</p>
+		<p class="spec f-eb">I study the provable security of symmetric-key cryptographic modes — classical and
+			post-quantum — using combinatorial techniques. I completed my PhD in 2019 at the Indian Statistical
+			Institute, and have since held appointments at Inria Paris, EPFL, and the University of Luxembourg,
+			joining the Technology Innovation Institute in April 2024.</p>
+
+		<p class="label" style="margin-top:26px;">Body in IM Fell English <span style="color:var(--ink2);font-family:'EB Garamond';">— your question</span></p>
+		<p class="note">Full of period character, but the ink-spread and irregularity grow tiring across a paragraph.</p>
+		<p class="spec f-fell">I study the provable security of symmetric-key cryptographic modes — classical and
+			post-quantum — using combinatorial techniques. I completed my PhD in 2019 at the Indian Statistical
+			Institute, and have since held appointments at Inria Paris, EPFL, and the University of Luxembourg,
+			joining the Technology Innovation Institute in April 2024.</p>
+
+		<p class="label" style="margin-top:26px;">Body in Cormorant Garamond</p>
+		<p class="note">More delicate and high-contrast; elegant, a touch lighter on screen.</p>
+		<p class="spec f-corm">I study the provable security of symmetric-key cryptographic modes — classical and
+			post-quantum — using combinatorial techniques. I completed my PhD in 2019 at the Indian Statistical
+			Institute, and have since held appointments at Inria Paris, EPFL, and the University of Luxembourg,
+			joining the Technology Innovation Institute in April 2024.</p>
+
+		<p class="label" style="margin-top:26px;">Body in Sorts Mill Goudy</p>
+		<p class="note">A warm Goudy old-style; slightly more characterful than EB Garamond, still readable.</p>
+		<p class="spec f-goudy">I study the provable security of symmetric-key cryptographic modes — classical and
+			post-quantum — using combinatorial techniques. I completed my PhD in 2019 at the Indian Statistical
+			Institute, and have since held appointments at Inria Paris, EPFL, and the University of Luxembourg,
+			joining the Technology Innovation Institute in April 2024.</p>
+	</div>
+</body>
+
+</html>

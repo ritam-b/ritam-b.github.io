@@ -1,77 +1,271 @@
+/* ============================================================
+   Ritam Bhaumik — "Treatise" design (sandbox)
+   Old-style academic look: aged paper, sepia ink, rubricated red.
+   Body: EB Garamond.  Display/small-caps: IM Fell English (SC).
+   ============================================================ */
+
+:root {
+    --paper:   #f2e8d2;
+    --paper2:  #ede1c6;
+    --ink:     #33281b;
+    --ink2:    #6f5e45;
+    --faint:   #8a795d;
+    --rub:     #9a3b25;
+    --rule:    #c7b489;
+    --frame:   #33281b;
+    --serif:   'EB Garamond', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+    --display: 'IM Fell English SC', 'EB Garamond', Palatino, Georgia, serif;
+    --fell:    'IM Fell English', 'EB Garamond', Palatino, Georgia, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper:  #181310;
+        --paper2: #201811;
+        --ink:    #e8dcc2;
+        --ink2:   #b6a684;
+        --faint:  #8f8168;
+        --rub:    #d0623f;
+        --rule:   #4a3f2e;
+        --frame:  #b6a684;
+    }
+}
+
+* { box-sizing: border-box; }
+
 body {
-    margin: 60px auto;
-    width: 70%;
+    margin: 0;
+    background-color: var(--paper);
+    background-image: radial-gradient(rgba(120, 90, 40, 0.05) 1px, transparent 1px);
+    background-size: 4px 4px;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
-nav ul,
-footer ul {
-    font-family: 'Fontin', 'Arial', 'Sans-Serif';
-    padding: 0px;
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+/* ---- Nav (running head) ---- */
+header nav ul {
     list-style: none;
-    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    padding: 12px 0 9px;
+    max-width: 720px;
+    border-bottom: 1px solid var(--rule);
 }
 
-nav ul li,
-footer ul li {
-    display: inline;
-    margin-right: 20px;
-}
+header nav li { display: inline; }
 
-a {
+header nav a {
+    font-family: var(--display);
+    font-variant: small-caps;
+    letter-spacing: 0.16em;
+    font-size: 16px;
+    color: var(--ink);
     text-decoration: none;
-    color: #b3549b;
+    margin: 0 15px;
 }
 
-nav a {
-    color: #9f802a;
+header nav a:hover { color: var(--rub); }
+
+/* ---- Masthead (title page) ---- */
+.masthead { text-align: center; margin: 34px 0 26px; }
+
+.masthead .orn { display: block; margin: 0 auto 14px; color: var(--ink); }
+
+.masthead h1 {
+    font-family: var(--display);
+    font-variant: small-caps;
+    letter-spacing: 0.11em;
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 1.02;
+    margin: 0;
+    color: var(--ink);
 }
+
+.drule {
+    width: 70%;
+    max-width: 420px;
+    margin: 16px auto;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    height: 4px;
+}
+
+.subtitle {
+    font-family: var(--display);
+    font-variant: small-caps;
+    letter-spacing: 0.12em;
+    font-size: 18px;
+    color: var(--rub);
+    margin: 0 0 6px;
+}
+
+.imprint {
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink2);
+    margin: 0;
+}
+
+/* ---- Author plate ---- */
+.plate { float: right; width: 168px; margin: 6px 0 16px 28px; text-align: center; }
+
+.plate .frame {
+    height: 197px;
+    border: 1px solid var(--frame);
+    outline: 3px double var(--frame);
+    outline-offset: 3px;
+    background: linear-gradient(160deg, #e6d7b6, #d3ba90);
+}
+
+.plate img.portrait {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--frame);
+    outline: 3px double var(--frame);
+    outline-offset: 3px;
+    filter: grayscale(0.25) sepia(0.32) contrast(1.02);
+}
+
+@media (prefers-color-scheme: dark) {
+    .plate img.portrait { filter: grayscale(0.3) sepia(0.4) brightness(0.82) contrast(1.02); }
+}
+
+.plate figcaption {
+    font-family: var(--display);
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    font-size: 13px;
+    color: var(--faint);
+    margin-top: 13px;
+}
+
+/* ---- Prose ---- */
+.blurb p { font-size: 20px; text-align: justify; hyphens: auto; margin: 0 0 17px; }
+
+.intro > p:first-of-type::first-letter {
+    float: left;
+    font-family: var(--fell);
+    font-size: 4.5em;
+    line-height: 0.72;
+    padding: 8px 12px 0 0;
+    color: var(--rub);
+}
+
+.blurb a { color: var(--rub); text-decoration: none; border-bottom: 1px solid rgba(154, 59, 37, 0.35); }
+.blurb a:hover { border-bottom-color: var(--rub); }
+
+/* ---- Section divider ---- */
+.divider { display: flex; align-items: center; gap: 16px; margin: 38px 0 22px; }
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+
+.divider span {
+    font-family: var(--display);
+    font-variant: small-caps;
+    letter-spacing: 0.18em;
+    font-size: 17px;
+    color: var(--ink);
+    white-space: nowrap;
+}
+
+/* ---- Index of works ---- */
+.works { counter-reset: work; }
+
+.works p {
+    counter-increment: work;
+    position: relative;
+    border: 1px solid var(--rule);
+    background: var(--paper2);
+    padding: 13px 18px 14px 48px;
+    margin: 0 0 11px;
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.42;
+    color: var(--ink2);
+}
+
+.works p::before {
+    content: counter(work, upper-roman) ".";
+    position: absolute;
+    left: 15px;
+    top: 13px;
+    font-family: var(--display);
+    color: var(--rub);
+    font-size: 15px;
+    letter-spacing: 0.03em;
+}
+
+.works p em {
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink);
+}
+
+.works p strong {
+    display: inline-block;
+    margin-top: 3px;
+    font-weight: 400;
+    font-family: var(--display);
+    font-variant: small-caps;
+    letter-spacing: 0.07em;
+    font-size: 14px;
+    color: var(--rub);
+}
+
+.more { text-align: center; font-style: italic; font-size: 17px; color: var(--ink2); margin: 18px 0 0; }
+
+/* ---- Contact ---- */
+.contact-line { margin: 0 0 14px; font-size: 19px; }
+.contact-line .label {
+    font-family: var(--display);
+    font-variant: small-caps;
+    letter-spacing: 0.09em;
+    color: var(--rub);
+    margin-right: 8px;
+}
+
+/* ---- Footer ---- */
+footer { text-align: center; margin: 46px auto 60px; color: var(--faint); }
+footer .footer-orn { display: block; margin: 0 auto 14px; }
+
+footer ul {
+    list-style: none;
+    padding: 12px 0 0;
+    margin: 0 auto;
+    max-width: 720px;
+    border-top: 1px solid var(--rule);
+}
+
+footer li { display: inline; }
 
 footer a {
-    color: #736335;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-h1 {
-    font-size: 2.5em;
-    font-family: 'Fontin', 'Arial', 'Sans-Serif';
+    font-family: var(--display);
     font-variant: small-caps;
+    letter-spacing: 0.1em;
+    font-size: 15px;
+    color: var(--ink2);
+    text-decoration: none;
+    margin: 0 11px;
 }
 
-h2 {
-    font-size: 1.7em;
-    font-family: 'Fontin', 'Arial', 'Sans-Serif';
-    font-variant: small-caps;
-}
+footer a:hover { color: var(--rub); }
 
-p {
-    font-size: 1.3em;
-    font-family: 'Fontin', 'Arial', 'Sans-Serif';
-    font-variant: normal;
-    line-height: 1.3em;
-    color: #333;
-    text-justify: auto;
-}
-
-ul {
-    list-style-type: circle;
-    font-size: 1.3em;
-    line-height: 1.3em;
-    color: #333;
-}
-
-footer {
-    border-top: 1px solid #d5d5d5;
-    font-size: .8em;
-}
-
-ul.posts {
-    margin: 20px auto 40px;
-    font-size: 1.5em;
-}
-
-ul.posts li {
-    list-style: none;
+/* ---- Small screens ---- */
+@media (max-width: 560px) {
+    body { font-size: 18px; }
+    .masthead h1 { font-size: 36px; }
+    .plate { float: none; display: block; margin: 0 auto 20px; }
+    .blurb p { font-size: 18px; }
+    header nav a { margin: 0 9px; letter-spacing: 0.1em; }
 }

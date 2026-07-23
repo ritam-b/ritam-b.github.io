@@ -3,16 +3,52 @@ layout: default-test
 title: Ritam Bhaumik
 ---
 <div class="blurb">
-	<h1>{{ page.title }}</h1>
-	<img src="../images/photo-for-website.jpg" alt="At Versailles"
-		style="width:342px;height:400px;padding-left:30px;float:right;">
-	<p>I am a Senior Researcher at the Cryptography Research Center in Technology Innovation Institute (TII), Abu Dhabi,
-		working on Classical and Post-Quantum Symmetric-Key Cryptography.</p>
-	<p>I completed my PhD in Computer Science from Indian Statistical Institute, Kolkata, in December 2019. In April
-		2024 I joined my present position at TII. From October 2022 to March 2024, I was in the LASEC lab at EPFL as a
-		post-doc. Before that, I was on an SRP contract at Inria, Paris, as part of the COSMIQ Team; this was a
-		continuation of the post-doc position in the same team I joined in March 2020. Earlier I've been a Research
-		Associate at the University of Luxembourg, as part of the SnT group.</p>
-	<p>I always look forward to interacting with motivated students and young researchers. If you have something on your
-		mind that you think might interest me, feel free to drop me a mail.</p>
-</div><!-- /.blurb -->
+	<div class="masthead">
+		<svg class="orn" width="150" height="12" viewBox="0 0 150 12" aria-hidden="true">
+			<path d="M0 6 L70 3.5 L75 1 L80 3.5 L150 6 L80 8.5 L75 11 L70 8.5 Z" fill="currentColor" />
+		</svg>
+		<h1>Ritam Bhaumik</h1>
+		<div class="drule"></div>
+		<p class="subtitle">Symmetric-Key &amp; Post-Quantum Cryptography</p>
+		<p class="imprint">Cryptography Research Center &middot; Technology Innovation Institute &middot; Abu Dhabi</p>
+	</div>
+
+	<figure class="plate">
+		<img class="portrait" src="/images/photo-for-website.jpg" alt="Ritam Bhaumik">
+		<figcaption>R. Bhaumik</figcaption>
+	</figure>
+
+	<div class="intro">
+		<p>I am a Senior Researcher at the Cryptography Research Center in the Technology Innovation Institute (TII),
+			Abu Dhabi, where I study the provable security of symmetric-key cryptographic modes &mdash; classical and
+			post-quantum &mdash; using combinatorial techniques.</p>
+		<p>I completed my PhD in Computer Science at the Indian Statistical Institute, Kolkata, in December 2019.
+			Since then I have held appointments at Inria Paris (COSMIQ), the LASEC at EPFL, and the University of
+			Luxembourg (SnT), joining TII in April 2024. My complete <a href="/files/ritam-CV-feb26.pdf" target="_blank"
+				rel="noopener noreferrer">curriculum vit&aelig;</a> is available here.</p>
+		<p>I always look forward to interacting with motivated students and young researchers. If you have something
+			on your mind that you think might interest me, feel free to drop me a mail.</p>
+	</div>
+
+	<div class="divider"><span>Index of Works</span></div>
+
+	<div class="works">
+		{% include pub_entry_new.html
+		title="How to Build a Short-Input Random Oracle from Public Random Permutations"
+		venue="Eurocrypt 2026"
+		coauthors="Nilanjan Datta, Avijit Dutta, Ashwin Jha, Sougata Mandal, Bart Mennink, Hrithik Nandi and Yaobin Shen"
+		%}
+		{% include pub_entry.html
+		title="Post-quantum Security of Key-Alternating Feistel Ciphers"
+		venue="Asiacrypt 2025"
+		coauthors="Jyotirmoy Basak, Amit Kumar Chauhan, Ravindra Jejurikar, Ashwin Jha, Anandarup Roy, André Schrottenloher and Suprita Talnikar"
+		%}
+		{% include pub_entry.html
+		title="Cryptographic Treatment of Key Control Security In Light of NIST SP 800-108"
+		venue="Crypto 2025"
+		coauthors="Avijit Dutta, Akiko Inoue, Tetsu Iwata, Ashwin Jha, Kazuhiko Minematsu, Mridul Nandi, Yu Sasaki, Meltem Sönmez Turan and Stefano Tessaro"
+		%}
+	</div>
+
+	<p class="more"><a href="/sandbox/research-test.html">… the complete index of all twenty-five works &rarr;</a></p>
+</div>
