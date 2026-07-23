@@ -1,0 +1,31 @@
+name: Build check (Jekyll)
+
+# Validates that the site still builds with GitHub's own Pages engine.
+# Build-only: there is no deploy step, so this workflow never changes what
+# is published. `main` is intentionally excluded because it auto-deploys via
+# Pages; this gate runs on every other branch and on PRs targeting main.
+
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build with the GitHub Pages engine
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site

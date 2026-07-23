@@ -3,6 +3,19 @@ body {
     width: 70%;
 }
 
+img {
+    max-width: 100%;
+}
+
+.profile-photo {
+    width: 40%;
+    max-width: 342px;
+    height: auto;
+    float: right;
+    padding-left: 30px;
+    margin-bottom: 8px;
+}
+
 nav ul,
 footer ul {
     font-family: 'Fontin', 'Arial', 'Sans-Serif';
@@ -74,4 +87,20 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
+}
+
+@media (max-width: 680px) {
+    body {
+        width: 86%;
+        margin: 32px auto;
+    }
+
+    .profile-photo {
+        float: none;
+        display: block;
+        width: 60%;
+        max-width: 220px;
+        margin: 0 auto 20px;
+        padding-left: 0;
+    }
 }
