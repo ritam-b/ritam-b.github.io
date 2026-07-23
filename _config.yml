@@ -6,6 +6,8 @@ description: >-
   Technology Innovation Institute (TII), Abu Dhabi, working on classical and
   post-quantum symmetric-key cryptography.
 url: https://ritam-b.github.io
+twitter:
+  card: summary
 
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
