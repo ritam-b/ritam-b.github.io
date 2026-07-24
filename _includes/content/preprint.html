@@ -1,0 +1,8 @@
+{% comment %}
+  Renders one note/preprint (no venue). Call with a data object:
+      {% include content/preprint.html item=note %}
+{% endcomment %}
+<p>
+	<em>{{ include.item.title }}</em>.<br>
+	(with {{ include.item.coauthors }}){% if include.item.doi %} <a class="doi-link" href="https://doi.org/{{ include.item.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
+</p>

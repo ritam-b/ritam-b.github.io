@@ -1,0 +1,29 @@
+{% comment %} "treatise" home page — title-page arrangement, content from data. {% endcomment %}
+<div class="blurb">
+	<div class="masthead">
+		<svg class="orn" width="150" height="12" viewBox="0 0 150 12" aria-hidden="true">
+			<path d="M0 6 L70 3.5 L75 1 L80 3.5 L150 6 L80 8.5 L75 11 L70 8.5 Z" fill="currentColor" />
+		</svg>
+		<h1>{{ page.title }}</h1>
+		<div class="drule"></div>
+		<p class="subtitle">{{ site.data.profile.home_subtitle }}</p>
+		<p class="imprint">{{ site.data.profile.home_imprint }}</p>
+	</div>
+
+	<figure class="plate">
+		<img class="portrait" src="{{ site.data.profile.portrait }}" alt="{{ site.data.profile.portrait_alt }}">
+		<figcaption>{{ site.data.profile.portrait_caption }}</figcaption>
+	</figure>
+
+	<div class="intro">
+		{% include content/bio.html %}
+	</div>
+
+	<div class="divider"><span>Index of Works</span></div>
+
+	<div class="works">
+		{% for pub in site.data.publications limit:3 %}{% include content/pub.html item=pub %}{% endfor %}
+	</div>
+
+	<p class="more"><a href="/research/">… the complete index of all {{ site.data.publications | size }} works &rarr;</a></p>
+</div><!-- /.blurb -->

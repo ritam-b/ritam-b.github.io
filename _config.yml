@@ -9,6 +9,17 @@ twitter:
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 
+# ---------------------------------------------------------------------------
+# Active visual style. This is the whole-site theme switch: it selects the
+# stylesheet, fonts, and per-page templates under _includes/themes/<style>/.
+# Content (bio, publications, contact) is style-independent and lives in
+# _data/ and _includes/content/, so switching styles never touches content.
+#   classic   -> the original look (local Fontin fonts, css/classic.css)
+#   treatise  -> the vintage redesign  (EB Garamond / IM Fell, css/treatise.css)
+# Change this one line and rebuild to reskin the entire site.
+# (A future client-side switcher can override it via the data-style attribute.)
+style: classic
+
 # Default Open Graph / Twitter preview image for every page (used by jekyll-seo-tag)
 defaults:
   - scope:

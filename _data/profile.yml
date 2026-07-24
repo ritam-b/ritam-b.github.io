@@ -1,0 +1,33 @@
+# ---------------------------------------------------------------------------
+# Profile — small structured content strings shared across visual styles.
+# The bio prose itself lives in _includes/content/bio.html (it contains links,
+# which read badly in YAML). Everything here is plain text a style may or may
+# not choose to display: e.g. the "classic" style ignores the decorative
+# subtitle/imprint, while "treatise" renders them on its masthead.
+# ---------------------------------------------------------------------------
+
+# Decorative taglines used by styles that have a masthead.
+home_subtitle:     "Symmetric-Key &amp; Post-Quantum Cryptography"
+home_imprint:      "Cryptography Research Center &middot; Technology Innovation Institute &middot; Abu Dhabi"
+research_subtitle: "Provable Security of Symmetric-Key Cryptography"
+
+# Portrait shown on the home page.
+portrait:         "/images/photo-for-website.jpg"
+portrait_alt:     "Ritam Bhaumik at Versailles"
+portrait_caption: "R. Bhaumik"
+
+# Curriculum vitae (linked from the bio).
+cv:         "/files/ritam-CV-feb26.pdf"
+cv_updated: "February 2026"
+
+# Contact details, rendered by every style's contact page.
+#   label  short heading; a style may append its own ": " etc.
+#   email  if present, rendered as a mailto: link.
+#   value  if present (and no email), rendered as plain text.
+contact:
+  - label: "Office"
+    value: "Cryptography Research Center (CRC), Technology Innovation Institute (TII), P.O. Box 9639, Yas Island, Abu Dhabi, United Arab Emirates."
+  - label: "Personal"
+    email: "bhaumik.ritam@gmail.com"
+  - label: "Work"
+    email: "ritam.bhaumik@tii.ae"

@@ -1,0 +1,11 @@
+{% comment %} "classic" research page — headings + flat lists, content from data. {% endcomment %}
+<div class="blurb">
+	<h1>{{ page.title }}</h1>
+	{% include content/research_intro.html %}
+
+	<h2>Publications</h2>
+	{% for pub in site.data.publications %}{% include content/pub.html item=pub %}{% endfor %}
+
+	<h2>Notes and Preprints</h2>
+	{% for note in site.data.preprints %}{% include content/preprint.html item=note %}{% endfor %}
+</div><!-- /.blurb -->

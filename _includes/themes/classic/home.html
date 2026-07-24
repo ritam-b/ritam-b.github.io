@@ -1,0 +1,6 @@
+{% comment %} "classic" home page — original arrangement, content from data. {% endcomment %}
+<div class="blurb">
+	<h1>{{ page.title }}</h1>
+	<img src="{{ site.data.profile.portrait }}" alt="{{ site.data.profile.portrait_alt }}" class="profile-photo">
+	{% include content/bio.html %}
+</div><!-- /.blurb -->

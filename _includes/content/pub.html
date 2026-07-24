@@ -1,0 +1,11 @@
+{% comment %}
+  Renders one publication. Call with a data object:
+      {% include content/pub.html item=pub %}
+  The markup is identical across styles — appearance (roman numerals, framed
+  cards, plain paragraphs) is entirely the job of each style's CSS.
+{% endcomment %}
+<p>
+	<em>{{ include.item.title }}</em>.<br>
+	<strong>{{ include.item.venue }}</strong>{% if include.item.to_appear %} (to appear){% endif %}.<br>
+	(with {{ include.item.coauthors }}){% if include.item.doi %} <a class="doi-link" href="https://doi.org/{{ include.item.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
+</p>

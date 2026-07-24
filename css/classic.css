@@ -47,6 +47,26 @@ a:hover {
     text-decoration: underline;
 }
 
+.doi-link {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 8px;
+    font-size: 0.65em;
+    font-weight: bold;
+    font-family: 'Fontin', 'Arial', 'Sans-Serif';
+    color: #b3549b;
+    border: 1px solid #b3549b;
+    border-radius: 3px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.doi-link:hover {
+    background: #b3549b;
+    color: #fff;
+    text-decoration: none;
+}
+
 h1 {
     font-size: 2.5em;
     font-family: 'Fontin', 'Arial', 'Sans-Serif';

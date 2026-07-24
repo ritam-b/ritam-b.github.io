@@ -1,14 +1,12 @@
 ---
 layout: default
 title: Contact
+body: contact
 description: >-
   Contact details for Ritam Bhaumik at the Cryptography Research Center,
   Technology Innovation Institute (TII), Abu Dhabi.
 ---
-
-<div class="blurb">
-	<h1>{{ page.title }}</h1>
-  <p><em>Office Address:</em> Cryptography Research Center (CRC), Technology Innovation Institute (TII), P.O.Box: 9639, Yas Island, Abu Dhabi, United Arab Emirates.</p>
-  <p><em>Personal Email:</em> bhaumik.ritam@gmail.com</p>
-  <p><em>Work Email:</em> ritam.bhaumik@tii.ae</p>
-</div><!-- /.blurb -->
+{% comment %}
+  Identity only. The active style renders themes/<style>/contact.html, which
+  reads the contact details from _data/profile.yml.
+{% endcomment %}

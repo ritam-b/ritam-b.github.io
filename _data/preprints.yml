@@ -1,0 +1,24 @@
+# ---------------------------------------------------------------------------
+# Notes & Preprints — single source of truth for the un-refereed works list.
+# Same idea as publications.yml, but without a venue.
+#
+# Per entry:
+#   title      (required)
+#   coauthors  (required)
+#   doi        (optional)  Bare DOI; linked via https://doi.org/<doi>.
+# ---------------------------------------------------------------------------
+
+- title: "A Note on Feedback-PRF Mode of KDF from NIST SP 800-108"
+  coauthors: "Avijit Dutta, Tetsu Iwata, Ashwin Jha, Kazuhiko Minematsu, Mridul Nandi, Yu Sasaki, Meltem Sönmez Turan and Stefano Tessaro"
+
+- title: "Pencil: A Domain-Extended BBB PRF for Strengthening GCM and More"
+  coauthors: "Jean Paul Degabriele"
+
+- title: "BBB Secure Large-Tweak TBC from Ideal Block Ciphers"
+  coauthors: "Arghya Bhattacharjee, Nilanjan Datta, Avijit Dutta, Shibam Ghosh and Sougata Mandal"
+
+- title: "Universal Context Commitment without Ciphertext Expansion"
+  coauthors: "Arghya Bhattacharjee and Chandranan Dhar"
+
+- title: "Indifferentiability of 6-round Feistel"
+  coauthors: "Ashwin Jha, Mridul Nandi, Sayantan Paul and Abishanka Saha"

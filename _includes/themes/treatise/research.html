@@ -1,0 +1,25 @@
+{% comment %} "treatise" research page — masthead + dividers, content from data. {% endcomment %}
+<div class="blurb">
+	<div class="masthead">
+		<svg class="orn" width="150" height="12" viewBox="0 0 150 12" aria-hidden="true">
+			<path d="M0 6 L70 3.5 L75 1 L80 3.5 L150 6 L80 8.5 L75 11 L70 8.5 Z" fill="currentColor" />
+		</svg>
+		<h1>{{ page.title }}</h1>
+		<div class="drule"></div>
+		<p class="subtitle">{{ site.data.profile.research_subtitle }}</p>
+	</div>
+
+	{% include content/research_intro.html %}
+
+	<div class="divider"><span>Publications</span></div>
+
+	<div class="works">
+		{% for pub in site.data.publications %}{% include content/pub.html item=pub %}{% endfor %}
+	</div>
+
+	<div class="divider"><span>Notes &amp; Preprints</span></div>
+
+	<div class="works">
+		{% for note in site.data.preprints %}{% include content/preprint.html item=note %}{% endfor %}
+	</div>
+</div><!-- /.blurb -->
