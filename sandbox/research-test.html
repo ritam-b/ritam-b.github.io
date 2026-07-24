@@ -21,6 +21,15 @@ title: Research
 	<div class="divider"><span>Publications</span></div>
 
 	<div class="works">
+		{% include pub_entry_new_solo.html
+		title="The Key Control Security of KDF Combiners"
+		venue="SCN 2026"
+		%}
+		{% include pub_entry_new.html
+		title="Pencil: A Domain-Extended Committing BBB PRF for Strengthening GCM"
+		venue="Crypto 2026"
+		coauthors="Jean Paul Degabriele and Chandranan Dhar"
+		%}
 		{% include pub_entry_new.html
 		title="How to Build a Short-Input Random Oracle from Public Random Permutations"
 		venue="Eurocrypt 2026"
@@ -124,7 +133,7 @@ title: Research
 		{% include pub_entry.html
 		title="Turning Online Ciphers Off"
 		venue="Transactions on Symmetric Cryptology 2017(2)"
-		coauthors="Elena Andreeva, Guy Barwell, Mridul Nandi, Dan Page and Martijn Stam"
+		coauthors="Elena Andreeva, Guy Barwell, Mridul Nandi, Daniel Page and Martijn Stam"
 		%}
 		{% include pub_entry.html
 		title="Improved Security for OCB3"
@@ -154,10 +163,6 @@ title: Research
 		{% include preprint_entry.html
 		title="A Note on Feedback-PRF Mode of KDF from NIST SP 800-108"
 		coauthors="Avijit Dutta, Tetsu Iwata, Ashwin Jha, Kazuhiko Minematsu, Mridul Nandi, Yu Sasaki, Meltem Sönmez Turan and Stefano Tessaro"
-		%}
-		{% include preprint_entry.html
-		title="Pencil: A Domain-Extended BBB PRF for Strengthening GCM and More"
-		coauthors="Jean Paul Degabriele"
 		%}
 		{% include preprint_entry.html
 		title="BBB Secure Large-Tweak TBC from Ideal Block Ciphers"
