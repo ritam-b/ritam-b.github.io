@@ -11,10 +11,7 @@ title: Contact
 		<div class="drule"></div>
 	</div>
 
-	<p class="contact-line"><span class="label">Office</span> Cryptography Research Center (CRC), Technology Innovation
-		Institute (TII), P.O. Box 9639, Yas Island, Abu Dhabi, United Arab Emirates.</p>
-	<p class="contact-line"><span class="label">Personal</span> <a
-			href="mailto:bhaumik.ritam@gmail.com">bhaumik.ritam@gmail.com</a></p>
-	<p class="contact-line"><span class="label">Work</span> <a
-			href="mailto:ritam.bhaumik@tii.ae">ritam.bhaumik@tii.ae</a></p>
+	{% for item in site.data.profile.contact %}
+	<p class="contact-line"><span class="label">{{ item.label }}</span> {% if item.email %}<a href="mailto:{{ item.email }}">{{ item.email }}</a>{% else %}{{ item.value }}{% endif %}</p>
+	{% endfor %}
 </div>

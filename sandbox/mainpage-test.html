@@ -33,22 +33,8 @@ title: Ritam Bhaumik
 	<div class="divider"><span>Index of Works</span></div>
 
 	<div class="works">
-		{% include pub_entry_new.html
-		title="How to Build a Short-Input Random Oracle from Public Random Permutations"
-		venue="Eurocrypt 2026"
-		coauthors="Nilanjan Datta, Avijit Dutta, Ashwin Jha, Sougata Mandal, Bart Mennink, Hrithik Nandi and Yaobin Shen"
-		%}
-		{% include pub_entry.html
-		title="Post-quantum Security of Key-Alternating Feistel Ciphers"
-		venue="Asiacrypt 2025"
-		coauthors="Jyotirmoy Basak, Amit Kumar Chauhan, Ravindra Jejurikar, Ashwin Jha, Anandarup Roy, André Schrottenloher and Suprita Talnikar"
-		%}
-		{% include pub_entry.html
-		title="Cryptographic Treatment of Key Control Security In Light of NIST SP 800-108"
-		venue="Crypto 2025"
-		coauthors="Avijit Dutta, Akiko Inoue, Tetsu Iwata, Ashwin Jha, Kazuhiko Minematsu, Mridul Nandi, Yu Sasaki, Meltem Sönmez Turan and Stefano Tessaro"
-		%}
+		{% for pub in site.data.publications limit:3 %}{% include content/pub.html item=pub %}{% endfor %}
 	</div>
 
-	<p class="more"><a href="/sandbox/research-test.html">… the complete index of all twenty-five works &rarr;</a></p>
+	<p class="more"><a href="/sandbox/research-test.html">… the complete index of all {{ site.data.publications | size }} works &rarr;</a></p>
 </div>
