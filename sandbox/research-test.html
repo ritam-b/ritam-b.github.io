@@ -2,31 +2,4 @@
 layout: default-test
 title: Research
 ---
-<div class="blurb">
-	<div class="masthead">
-		<svg class="orn" width="150" height="12" viewBox="0 0 150 12" aria-hidden="true">
-			<path d="M0 6 L70 3.5 L75 1 L80 3.5 L150 6 L80 8.5 L75 11 L70 8.5 Z" fill="currentColor" />
-		</svg>
-		<h1>Research</h1>
-		<div class="drule"></div>
-		<p class="subtitle">Provable Security of Symmetric-Key Cryptography</p>
-	</div>
-
-	<p>My primary interest is the provable security analysis of symmetric-key cryptographic modes using combinatorial
-		techniques. My doctoral work concerned security against a classical adversary; at Inria I began studying
-		security against a quantum adversary, and I now study proof frameworks that adapt classical counting techniques
-		to the post-quantum setting. My publications are also listed on <a href="https://dblp.org/pid/167/3093.html"
-			target="_blank" rel="noopener noreferrer">DBLP</a>.</p>
-
-	<div class="divider"><span>Publications</span></div>
-
-	<div class="works">
-		{% for pub in site.data.publications %}{% include content/pub.html item=pub %}{% endfor %}
-	</div>
-
-	<div class="divider"><span>Notes &amp; Preprints</span></div>
-
-	<div class="works">
-		{% for note in site.data.preprints %}{% include content/preprint.html item=note %}{% endfor %}
-	</div>
-</div>
+{% include themes/treatise/research.html %}

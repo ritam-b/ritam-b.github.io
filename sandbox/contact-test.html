@@ -2,16 +2,4 @@
 layout: default-test
 title: Contact
 ---
-<div class="blurb">
-	<div class="masthead">
-		<svg class="orn" width="150" height="12" viewBox="0 0 150 12" aria-hidden="true">
-			<path d="M0 6 L70 3.5 L75 1 L80 3.5 L150 6 L80 8.5 L75 11 L70 8.5 Z" fill="currentColor" />
-		</svg>
-		<h1>Contact</h1>
-		<div class="drule"></div>
-	</div>
-
-	{% for item in site.data.profile.contact %}
-	<p class="contact-line"><span class="label">{{ item.label }}</span> {% if item.email %}<a href="mailto:{{ item.email }}">{{ item.email }}</a>{% else %}{{ item.value }}{% endif %}</p>
-	{% endfor %}
-</div>
+{% include themes/treatise/contact.html %}
