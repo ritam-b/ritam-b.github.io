@@ -6,16 +6,22 @@
 #   title      (required)
 #   coauthors  (required)
 #   doi        (optional)  Bare DOI; linked via https://doi.org/<doi>.
+#   eprint     (optional)  IACR eprint id (e.g. "2025/1586"); linked via
+#                          https://eprint.iacr.org/<eprint>. Not every note
+#                          has one — omit when no eprint posting exists.
 # ---------------------------------------------------------------------------
 
 - title: "A Note on Feedback-PRF Mode of KDF from NIST SP 800-108"
   coauthors: "Avijit Dutta, Tetsu Iwata, Ashwin Jha, Kazuhiko Minematsu, Mridul Nandi, Yu Sasaki, Meltem Sönmez Turan and Stefano Tessaro"
+  eprint: "2025/1586"
 
 - title: "BBB Secure Large-Tweak TBC from Ideal Block Ciphers"
   coauthors: "Arghya Bhattacharjee, Nilanjan Datta, Avijit Dutta, Shibam Ghosh and Sougata Mandal"
+  eprint: "2024/2049"
 
 - title: "Universal Context Commitment without Ciphertext Expansion"
   coauthors: "Arghya Bhattacharjee and Chandranan Dhar"
+  eprint: "2024/1382"
 
 - title: "Indifferentiability of 6-round Feistel"
   coauthors: "Ashwin Jha, Mridul Nandi, Sayantan Paul and Abishanka Saha"

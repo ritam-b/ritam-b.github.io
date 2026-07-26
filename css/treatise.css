@@ -225,7 +225,8 @@ header nav a:hover { color: var(--rub); }
 
 .more { text-align: center; font-style: italic; font-size: 17px; color: var(--ink2); margin: 18px 0 0; }
 
-.doi-link {
+.doi-link,
+.eprint-link {
     display: inline-block;
     margin-left: 6px;
     padding: 1px 7px;
@@ -239,7 +240,8 @@ header nav a:hover { color: var(--rub); }
     vertical-align: middle;
 }
 
-.doi-link:hover { background: var(--rub); color: var(--paper); }
+.doi-link:hover,
+.eprint-link:hover { background: var(--rub); color: var(--paper); }
 
 /* ---- Contact ---- */
 .contact-line { margin: 0 0 14px; font-size: 19px; }

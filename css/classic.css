@@ -47,7 +47,8 @@ a:hover {
     text-decoration: underline;
 }
 
-.doi-link {
+.doi-link,
+.eprint-link {
     display: inline-block;
     margin-left: 8px;
     padding: 1px 8px;
@@ -61,7 +62,8 @@ a:hover {
     vertical-align: middle;
 }
 
-.doi-link:hover {
+.doi-link:hover,
+.eprint-link:hover {
     background: #b3549b;
     color: #fff;
     text-decoration: none;

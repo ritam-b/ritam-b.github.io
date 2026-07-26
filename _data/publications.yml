@@ -10,6 +10,10 @@
 #   to_appear  (optional)  true  -> appends "(to appear)" after the venue.
 #   doi        (optional)  Bare DOI (e.g. 10.1007/...); styles that support it
 #                          render a small link to https://doi.org/<doi>.
+#   eprint     (optional)  IACR eprint id (e.g. "2023/207"); styles that
+#                          support it render a small link to
+#                          https://eprint.iacr.org/<eprint>. Not every paper
+#                          has one — omit when no eprint posting exists.
 # Order top-to-bottom is the order shown (newest first). The home page shows
 # the first few as an excerpt; the research page shows them all.
 # ---------------------------------------------------------------------------
@@ -17,51 +21,61 @@
 - title: "The Key Control Security of KDF Combiners"
   venue: "SCN '26"
   to_appear: true
+  eprint: "2026/1150"
 
 - title: "Pencil: A Domain-Extended Committing BBB PRF for Strengthening GCM"
   venue: "Crypto '26"
   coauthors: "Jean Paul Degabriele and Chandranan Dhar"
   to_appear: true
+  eprint: "2025/383"
 
 - title: "How to Build a Short-Input Random Oracle from Public Random Permutations"
   venue: "Eurocrypt '26"
   coauthors: "Nilanjan Datta, Avijit Dutta, Ashwin Jha, Sougata Mandal, Bart Mennink, Hrithik Nandi and Yaobin Shen"
   doi: "10.1007/978-3-032-25333-0_14"
+  eprint: "2026/336"
 
 - title: "Breaking and Fixing Macakey"
   venue: "Transactions on Symmetric Cryptology 2026(1)"
   coauthors: "Bishwajit Chakraborty and Chandranan Dhar"
   doi: "10.46586/tosc.v2026.i1.76-94"
+  eprint: "2025/2038"
 
 - title: "Post-quantum Security of Key-Alternating Feistel Ciphers"
   venue: "Asiacrypt '25"
   coauthors: "Jyotirmoy Basak, Amit Kumar Chauhan, Ravindra Jejurikar, Ashwin Jha, Anandarup Roy, André Schrottenloher and Suprita Talnikar"
   doi: "10.1007/978-981-95-5018-0_15"
+  eprint: "2025/1603"
 
 - title: "Cryptographic Treatment of Key Control Security In Light of NIST SP 800-108"
   venue: "Crypto '25"
   coauthors: "Avijit Dutta, Akiko Inoue, Tetsu Iwata, Ashwin Jha, Kazuhiko Minematsu, Mridul Nandi, Yu Sasaki, Meltem Sönmez Turan and Stefano Tessaro"
   doi: "10.1007/978-3-032-01901-1_12"
+  eprint: "2025/1123"
 
 - title: "Building a BBB Pseudorandom Permutation using Lai-Massey Networks"
   venue: "Communications in Cryptology 1(4)"
   coauthors: "Mohammad Amin Raeisi"
   doi: "10.62056/a0wahey6b"
+  eprint: "2023/1834"
 
 - title: "Block Cipher Doubling for a Post-Quantum World"
   venue: "Communications in Cryptology 1(3)"
   coauthors: "André Chailloux, Paul Frixons, Bart Mennink and María Naya-Plasencia"
   doi: "10.62056/av4fvua5v"
+  eprint: "2022/1342"
 
 - title: "Mind the Bad Norms: Revisiting Compressed Oracle-based Quantum Indistinguishability Proofs"
   venue: "Asiacrypt '24"
   coauthors: "Benoît Cogliati, Jordan Ethan and Ashwin Jha"
   doi: "10.1007/978-981-96-0947-5_8"
+  eprint: "2024/1478"
 
 - title: "Efficient Variants of TNT with BBB Security"
   venue: "ProvSec '24"
   coauthors: "Bishwajit Chakraborty, Wonseok Choi, Avijit Dutta, Cuauhtemoc Mancillas López, Hrithik Nandi and Yaobin Shen"
   doi: "10.1007/978-981-96-0957-4_1"
+  eprint: "2024/1237"
 
 - title: "Indifferentiability of Confusion-Diffusion Networks"
   venue: "SCN '24"
@@ -72,16 +86,19 @@
   venue: "SAC '24"
   coauthors: "Arghya Bhattacharjee, Daniel Collins and Mridul Nandi"
   doi: "10.1007/978-3-031-82841-6_3"
+  eprint: "2024/1346"
 
 - title: "The Committing Security of MACs with Applications to Generic Composition"
   venue: "Crypto '24"
   coauthors: "Bishwajit Chakraborty, Wonseok Choi, Avijit Dutta, Jérôme Govinden and Yaobin Shen"
   doi: "10.1007/978-3-031-68385-5_14"
+  eprint: "2024/928"
 
 - title: "On Quantum-Secure Compressing Pseudorandom Functions"
   venue: "Asiacrypt '23"
   coauthors: "Benoît Cogliati, Jordan Ethan and Ashwin Jha"
   doi: "10.1007/978-981-99-8727-6_2"
+  eprint: "2023/207"
 
 - title: "BBB-Security for 5-Round Even-Mansour-Based Key-Alternating Feistel Ciphers"
   venue: "Designs, Codes and Cryptography 92(1)"
@@ -92,21 +109,25 @@
   venue: "ICICS '23"
   coauthors: "Arghya Bhattacharjee, Avijit Dutta and Eik List"
   doi: "10.1007/978-981-99-7356-9_5"
+  eprint: "2023/978"
 
 - title: "Revisiting the Indifferentiability of the Sum of Permutations"
   venue: "Crypto '23"
   coauthors: "Aldo Gunsing, Ashwin Jha, Bart Mennink and Yaobin Shen"
   doi: "10.1007/978-3-031-38548-3_21"
+  eprint: "2023/840"
 
 - title: "Offset-Based BBB-Secure Tweakable Block-ciphers with Updatable Caches"
   venue: "Indocrypt '22"
   coauthors: "Arghya Bhattacharjee and Mridul Nandi"
   doi: "10.1007/978-3-031-22912-1_8"
+  eprint: "2022/1776"
 
 - title: "A Sponge-Based PRF with Good Multi-user Security"
   venue: "SAC '22"
   coauthors: "Arghya Bhattacharjee and Mridul Nandi"
   doi: "10.1007/978-3-031-58411-4_21"
+  eprint: "2022/1146"
 
 - title: "Improved indifferentiability security proof for 3-round tweakable Luby-Rackoff"
   venue: "Designs, Codes and Cryptography 89(10)"
@@ -117,33 +138,40 @@
   venue: "Asiacrypt '21"
   coauthors: "Xavier Bonnetain, André Chailloux, Gaëtan Leurent, María Naya-Plasencia, André Schrottenloher and Yannick Seurin"
   doi: "10.1007/978-3-030-92062-3_23"
+  eprint: "2020/1304"
 
 - title: "ZCZ - Achieving n-bit SPRP Security with a Minimal Number of Tweakable-Block-Cipher Calls"
   venue: "Asiacrypt '18"
   coauthors: "Eik List and Mridul Nandi"
   doi: "10.1007/978-3-030-03326-2_12"
+  eprint: "2018/819"
 
 - title: "Turning Online Ciphers Off"
   venue: "Transactions on Symmetric Cryptology 2017(2)"
   coauthors: "Elena Andreeva, Guy Barwell, Daniel Page, Mridul Nandi and Martijn Stam"
   doi: "10.46586/tosc.v2017.i2.105-142"
+  eprint: "2015/485"
 
 - title: "Improved Security for OCB3"
   venue: "Asiacrypt '17"
   coauthors: "Mridul Nandi"
   doi: "10.1007/978-3-319-70697-9_22"
+  eprint: "2017/845"
 
 - title: "The Iterated Random Function Problem"
   venue: "Asiacrypt '17"
   coauthors: "Nilanjan Datta, Avijit Dutta, Nicky Mouha and Mridul Nandi"
   doi: "10.1007/978-3-319-70697-9_23"
+  eprint: "2017/892"
 
 - title: "OleF: an Inverse-Free Online Cipher"
   venue: "Transactions on Symmetric Cryptology 2016(2)"
   coauthors: "Mridul Nandi"
   doi: "10.46586/tosc.v2016.i2.30-51"
+  eprint: "2016/1090"
 
 - title: "An Inverse-Free Single-Keyed Tweakable Enciphering Scheme"
   venue: "Asiacrypt '15"
   coauthors: "Mridul Nandi"
   doi: "10.1007/978-3-662-48800-3_7"
+  eprint: "2015/1148"
