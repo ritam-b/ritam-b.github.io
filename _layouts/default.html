@@ -45,6 +45,10 @@
 	</main>
 	{% assign style_footer = "themes/" | append: site.style | append: "/footer.html" %}
 	{% include {{ style_footer }} %}
+
+	{% comment %} Hover-to-expand abstracts on the publications list. Style-
+	agnostic and self-contained; no-ops on pages without publication entries. {% endcomment %}
+	<script defer src="/js/pub-abstracts.js"></script>
 </body>
 
 </html>
