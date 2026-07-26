@@ -18,17 +18,17 @@
     --fell:    'IM Fell English', 'EB Garamond', Palatino, Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --paper:  #181310;
-        --paper2: #201811;
-        --ink:    #e8dcc2;
-        --ink2:   #b6a684;
-        --faint:  #8f8168;
-        --rub:    #d0623f;
-        --rule:   #4a3f2e;
-        --frame:  #b6a684;
-    }
+/* Day is the default look; night is opt-in via the footer toggle (sets
+   data-theme="dark" on <html>, persisted in localStorage). */
+:root[data-theme="dark"] {
+    --paper:  #181310;
+    --paper2: #201811;
+    --ink:    #e8dcc2;
+    --ink2:   #b6a684;
+    --faint:  #8f8168;
+    --rub:    #d0623f;
+    --rule:   #4a3f2e;
+    --frame:  #b6a684;
 }
 
 * { box-sizing: border-box; }
@@ -138,9 +138,7 @@ header nav a:hover { color: var(--rub); }
     filter: grayscale(0.25) sepia(0.32) contrast(1.02);
 }
 
-@media (prefers-color-scheme: dark) {
-    .plate img.portrait { filter: grayscale(0.3) sepia(0.4) brightness(0.82) contrast(1.02); }
-}
+:root[data-theme="dark"] .plate img.portrait { filter: grayscale(0.3) sepia(0.4) brightness(0.82) contrast(1.02); }
 
 .plate figcaption {
     font-family: var(--display);
@@ -180,14 +178,11 @@ header nav a:hover { color: var(--rub); }
 }
 
 /* ---- Index of works ---- */
-.works { counter-reset: work; }
-
 .works p {
-    counter-increment: work;
     position: relative;
     border: 1px solid var(--rule);
     background: var(--paper2);
-    padding: 13px 18px 14px 48px;
+    padding: 13px 18px 14px 44px;
     margin: 0 0 11px;
     font-size: 16px;
     text-align: left;
@@ -196,15 +191,17 @@ header nav a:hover { color: var(--rub); }
 }
 
 .works p::before {
-    content: counter(work, upper-roman) ".";
     position: absolute;
     left: 15px;
     top: 13px;
-    font-family: var(--display);
+    font-family: var(--serif);
     color: var(--rub);
     font-size: 15px;
-    letter-spacing: 0.03em;
 }
+
+.works p[data-index]::before { content: attr(data-index) "."; }
+
+.works p:not([data-index])::before { content: "\2022"; }
 
 .works p em {
     font-style: italic;
@@ -278,6 +275,23 @@ footer a {
 }
 
 footer a:hover { color: var(--rub); }
+
+.theme-toggle {
+    display: block;
+    margin: 0 auto 14px;
+    padding: 3px 13px;
+    font-family: var(--display);
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    font-size: 13px;
+    color: var(--ink2);
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.theme-toggle:hover { color: var(--rub); border-color: var(--rub); }
 
 /* ---- Small screens ---- */
 @media (max-width: 560px) {

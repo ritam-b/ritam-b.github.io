@@ -14,7 +14,8 @@
 	<div class="divider"><span>Publications</span></div>
 
 	<div class="works">
-		{% for pub in site.data.publications %}{% include content/pub.html item=pub %}{% endfor %}
+		{% assign total = site.data.publications.size %}
+		{% for pub in site.data.publications %}{% assign num = total | minus: forloop.index0 %}{% include content/pub.html item=pub index=num %}{% endfor %}
 	</div>
 
 	<div class="divider"><span>Notes &amp; Preprints</span></div>

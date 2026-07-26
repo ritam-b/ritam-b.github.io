@@ -4,3 +4,9 @@
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap">
 <link rel="stylesheet" type="text/css" href="/css/treatise.css">
+{% comment %} Day is the default; only apply dark if the visitor explicitly chose it before. Inline and early to avoid a flash of the wrong theme. {% endcomment %}
+<script>
+	if (localStorage.getItem('treatise-theme') === 'dark') {
+		document.documentElement.setAttribute('data-theme', 'dark');
+	}
+</script>
