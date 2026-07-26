@@ -1,5 +1,5 @@
 <p>
   <em>{{ include.title }}</em>.<br>
   <strong>{{ include.venue }}</strong>.<br>
-  (with {{ include.coauthors }})
+  (with {{ include.coauthors }}){% if include.doi %} <a class="doi-link" href="https://doi.org/{{ include.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
 </p>

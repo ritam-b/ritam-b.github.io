@@ -225,6 +225,22 @@ header nav a:hover { color: var(--rub); }
 
 .more { text-align: center; font-style: italic; font-size: 17px; color: var(--ink2); margin: 18px 0 0; }
 
+.doi-link {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 7px;
+    font-family: var(--display);
+    font-variant: small-caps;
+    letter-spacing: 0.06em;
+    font-size: 11px;
+    color: var(--rub);
+    border: 1px solid var(--rub);
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.doi-link:hover { background: var(--rub); color: var(--paper); }
+
 /* ---- Contact ---- */
 .contact-line { margin: 0 0 14px; font-size: 19px; }
 .contact-line .label {
