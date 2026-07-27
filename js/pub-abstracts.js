@@ -105,6 +105,10 @@
 				inlineMath: [["$", "$"], ["\\(", "\\)"]],
 				displayMath: [["$$", "$$"], ["\\[", "\\]"]]
 			},
+			// Render math at the surrounding text's actual font-size. MathJax's
+			// default (matchFontHeight) rescales to match x-heights, which badly
+			// undersizes math against this site's serif fonts (~56%).
+			chtml: { matchFontHeight: false },
 			options: { enableMenu: false },
 			startup: {
 				typeset: false, // typeset panels on demand, not the whole page
