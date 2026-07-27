@@ -23,9 +23,11 @@
 #   Reads _data/publications.yml. For each work it fetches, in order of
 #   preference:
 #     1. IACR ePrint (https://eprint.iacr.org/<eprint>) when an `eprint:` id is
-#        present — full coverage, clean abstract markup.
-#     2. CrossRef (https://api.crossref.org/works/<doi>) as a fallback when
-#        there's a `doi:` but no eprint — only some venues deposit abstracts.
+#        present — full coverage, clean abstract markup with TeX math.
+#     2. Springer landing page (https://doi.org/<doi> -> link.springer.com),
+#        scraping <div id="Abs1-content"> — clean prose with proper math.
+#     3. CrossRef (https://api.crossref.org/works/<doi>) as a last resort — its
+#        JATS abstracts duplicate each equation (TeX + garbled fallback text).
 #   Whatever it finds is written to _data/abstracts.yml, keyed by the eprint id
 #   when available, otherwise the doi. Works with neither an abstract source nor
 #   a hit are simply skipped; their entries stay un-expanded on the page and can
@@ -147,12 +149,15 @@ if ($FROM_JSON) {
             $eprint_hits++ if $abstract;
         }
         if (!$abstract && $w->{doi}) {
-            $abstract = abstract_from_crossref($w->{doi});
-            $crossref_hits++ if $abstract;
-        }
-        if (!$abstract && $w->{doi}) {
+            # Springer before CrossRef: its landing-page abstract renders math
+            # cleanly, whereas CrossRef's JATS duplicates each equation as TeX
+            # plus a garbled plain-text fallback.
             $abstract = abstract_from_springer($w->{doi});
             $springer_hits++ if $abstract;
+        }
+        if (!$abstract && $w->{doi}) {
+            $abstract = abstract_from_crossref($w->{doi});
+            $crossref_hits++ if $abstract;
         }
         if ($abstract) {
             $abstracts{$key} = $abstract;
