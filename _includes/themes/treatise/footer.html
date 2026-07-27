@@ -3,10 +3,6 @@
 	<svg class="footer-orn" width="120" height="10" viewBox="0 0 120 10" aria-hidden="true">
 		<path d="M0 5 L56 3 L60 1 L64 3 L120 5 L64 7 L60 9 L56 7 Z" fill="currentColor" />
 	</svg>
-	<div class="toggle-row">
-		<button type="button" class="theme-toggle" aria-label="Switch between day and night mode">Night</button>
-		<button type="button" class="theme-toggle style-switch-btn" aria-label="Switch site look">Classic look</button>
-	</div>
 	<ul>
 		<li><a href="mailto:bhaumik.ritam@gmail.com">email</a></li>
 		<li><a href="https://dblp.org/pid/167/3093.html" target="_blank" rel="noopener noreferrer">dblp</a></li>
@@ -21,24 +17,3 @@
 				rel="noopener noreferrer">genealogy</a></li>
 	</ul>
 </footer>
-<script>
-	(function () {
-		var btn = document.querySelector('.theme-toggle');
-		if (!btn) return;
-		function sync() {
-			btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? 'Day' : 'Night';
-		}
-		sync();
-		btn.addEventListener('click', function () {
-			var goingDark = document.documentElement.getAttribute('data-theme') !== 'dark';
-			if (goingDark) {
-				document.documentElement.setAttribute('data-theme', 'dark');
-				localStorage.setItem('treatise-theme', 'dark');
-			} else {
-				document.documentElement.removeAttribute('data-theme');
-				localStorage.setItem('treatise-theme', 'light');
-			}
-			sync();
-		});
-	})();
-</script>

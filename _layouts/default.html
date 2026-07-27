@@ -28,16 +28,30 @@
 		[data-theme-block] { display: none; }
 		:root[data-style="classic"] [data-theme-block="classic"] { display: block; }
 		:root[data-style="treatise"] [data-theme-block="treatise"] { display: block; }
+
+		/* The look/mode toggle row: one shared control, fixed top-left,
+		   regardless of which theme (and which theme's own CSS for
+		   .toggle-row/.theme-toggle) is currently active. */
+		.toggle-row--fixed { position: fixed; top: 14px; left: 14px; z-index: 999; margin: 0; }
 	</style>
 	<script>
 		(function () {
-			var saved = localStorage.getItem('site-style');
-			if (saved !== 'classic' && saved !== 'treatise') return;
-			document.documentElement.setAttribute('data-style', saved);
+			var root = document.documentElement;
+			var savedStyle = localStorage.getItem('site-style');
+			if (savedStyle === 'classic' || savedStyle === 'treatise') {
+				root.setAttribute('data-style', savedStyle);
+			}
 			var c = document.getElementById('theme-css-classic');
 			var t = document.getElementById('theme-css-treatise');
-			if (c) c.disabled = (saved !== 'classic');
-			if (t) t.disabled = (saved !== 'treatise');
+			var active = root.getAttribute('data-style');
+			if (c) c.disabled = (active !== 'classic');
+			if (t) t.disabled = (active !== 'treatise');
+
+			{% comment %} Night mode works the same way in both themes now
+			(each stylesheet has its own :root[data-theme="dark"] overrides). {% endcomment %}
+			if (localStorage.getItem('site-theme-mode') === 'dark') {
+				root.setAttribute('data-theme', 'dark');
+			}
 		})();
 	</script>
 
@@ -47,6 +61,14 @@
 </head>
 
 <body>
+	{% comment %} Shared look/mode controls: one copy, fixed top-left, wired up
+	by the script at the end of body. Each button's appearance still comes
+	from whichever theme stylesheet is currently active (.theme-toggle /
+	.style-switch-btn are styled in both classic.css and treatise.css). {% endcomment %}
+	<div class="toggle-row toggle-row--fixed">
+		<button type="button" class="theme-toggle" id="daynight-toggle" aria-label="Switch between day and night mode">Night</button>
+		<button type="button" class="theme-toggle style-switch-btn" id="style-switch-btn" aria-label="Switch site look">New look</button>
+	</div>
 	<header>
 		{% include nav.html %}
 	</header>
@@ -83,30 +105,40 @@
 		{% include themes/treatise/footer.html %}
 	</div>
 
-	{% comment %} Client-side style switcher. The button itself lives in each
-	theme's footer (next to the day/night toggle in treatise); this just wires
-	up whichever copy is in the DOM. {% endcomment %}
+	{% comment %} Wires up the shared toggle-row buttons declared at the top
+	of body: style (classic/treatise) and mode (day/night). {% endcomment %}
 	<script>
 		(function () {
-			var buttons = document.querySelectorAll('.style-switch-btn');
 			var root = document.documentElement;
 			var c = document.getElementById('theme-css-classic');
 			var t = document.getElementById('theme-css-treatise');
-			function label(style) { return style === 'classic' ? 'New look' : 'Classic look'; }
-			function sync() {
-				var text = label(root.getAttribute('data-style'));
-				buttons.forEach(function (b) { b.textContent = text; });
-			}
-			sync();
-			buttons.forEach(function (btn) {
-				btn.addEventListener('click', function () {
-					var next = root.getAttribute('data-style') === 'classic' ? 'treatise' : 'classic';
-					root.setAttribute('data-style', next);
-					if (c) c.disabled = (next !== 'classic');
-					if (t) t.disabled = (next !== 'treatise');
-					localStorage.setItem('site-style', next);
-					sync();
-				});
+
+			var styleBtn = document.getElementById('style-switch-btn');
+			function styleLabel(style) { return style === 'classic' ? 'New look' : 'Classic look'; }
+			function syncStyle() { styleBtn.textContent = styleLabel(root.getAttribute('data-style')); }
+			syncStyle();
+			styleBtn.addEventListener('click', function () {
+				var next = root.getAttribute('data-style') === 'classic' ? 'treatise' : 'classic';
+				root.setAttribute('data-style', next);
+				if (c) c.disabled = (next !== 'classic');
+				if (t) t.disabled = (next !== 'treatise');
+				localStorage.setItem('site-style', next);
+				syncStyle();
+			});
+
+			var dnBtn = document.getElementById('daynight-toggle');
+			function syncTheme() { dnBtn.textContent = root.getAttribute('data-theme') === 'dark' ? 'Day' : 'Night'; }
+			syncTheme();
+			dnBtn.addEventListener('click', function () {
+				var goingDark = root.getAttribute('data-theme') !== 'dark';
+				if (goingDark) {
+					root.setAttribute('data-theme', 'dark');
+					localStorage.setItem('site-theme-mode', 'dark');
+				} else {
+					root.removeAttribute('data-theme');
+					localStorage.setItem('site-theme-mode', 'light');
+				}
+				syncTheme();
 			});
 		})();
 	</script>

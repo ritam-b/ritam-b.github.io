@@ -1,6 +1,8 @@
 body {
     margin: 60px auto;
     width: 70%;
+    background: #fff;
+    color: #333;
 }
 
 img {
@@ -104,26 +106,25 @@ footer {
 
 .toggle-row {
     display: flex;
-    justify-content: center;
     gap: 10px;
-    margin: 0 0 14px;
-    padding-top: 14px;
 }
 
-.style-switch-btn {
+.style-switch-btn,
+.theme-toggle {
     display: block;
     padding: 3px 13px;
     font-family: 'Fontin', 'Arial', 'Sans-Serif';
     font-weight: bold;
     font-size: 13px;
     color: #b3549b;
-    background: transparent;
+    background: #fff;
     border: 1px solid #b3549b;
     border-radius: 3px;
     cursor: pointer;
 }
 
-.style-switch-btn:hover { background: #b3549b; color: #fff; }
+.style-switch-btn:hover,
+.theme-toggle:hover { background: #b3549b; color: #fff; }
 
 ul.posts {
     margin: 20px auto 40px;
@@ -148,4 +149,33 @@ ul.posts li {
         margin: 0 auto 20px;
         padding-left: 0;
     }
+}
+
+/* ---- Night mode ---- */
+/* Opt-in via the day/night toggle (sets data-theme="dark" on <html>,
+   persisted in localStorage) — same mechanism the "treatise" style uses. */
+:root[data-theme="dark"] body { background: #1c1a17; color: #ccc; }
+
+:root[data-theme="dark"] a { color: #dd8fc7; }
+:root[data-theme="dark"] nav a { color: #d4b04e; }
+:root[data-theme="dark"] footer a { color: #a89b78; }
+:root[data-theme="dark"] footer { border-top-color: #444; }
+:root[data-theme="dark"] p,
+:root[data-theme="dark"] ul { color: #ccc; }
+
+:root[data-theme="dark"] .doi-link,
+:root[data-theme="dark"] .eprint-link,
+:root[data-theme="dark"] .style-switch-btn,
+:root[data-theme="dark"] .theme-toggle {
+    color: #dd8fc7;
+    background: #1c1a17;
+    border-color: #dd8fc7;
+}
+
+:root[data-theme="dark"] .doi-link:hover,
+:root[data-theme="dark"] .eprint-link:hover,
+:root[data-theme="dark"] .style-switch-btn:hover,
+:root[data-theme="dark"] .theme-toggle:hover {
+    background: #dd8fc7;
+    color: #1c1a17;
 }

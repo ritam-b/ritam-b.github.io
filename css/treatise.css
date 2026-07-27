@@ -278,9 +278,7 @@ footer a:hover { color: var(--rub); }
 
 .toggle-row {
     display: flex;
-    justify-content: center;
     gap: 10px;
-    margin: 0 0 14px;
 }
 
 .theme-toggle {
@@ -291,7 +289,7 @@ footer a:hover { color: var(--rub); }
     letter-spacing: 0.1em;
     font-size: 13px;
     color: var(--ink2);
-    background: transparent;
+    background: var(--paper);
     border: 1px solid var(--rule);
     border-radius: 3px;
     cursor: pointer;
