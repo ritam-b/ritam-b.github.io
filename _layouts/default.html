@@ -33,6 +33,15 @@
 		   regardless of which theme (and which theme's own CSS for
 		   .toggle-row/.theme-toggle) is currently active. */
 		.toggle-row--fixed { position: fixed; top: 14px; left: 14px; z-index: 999; margin: 0; }
+
+		/* On narrow screens both themes' nav sits close enough to the top
+		   edge to collide with the fixed toggle row (worst on treatise,
+		   whose centered nav starts almost immediately below the header).
+		   Reserve clearance above <header> only where that's actually a
+		   problem, rather than pushing content down on every viewport. */
+		@media (max-width: 700px) {
+			header { padding-top: 48px; }
+		}
 	</style>
 	<script>
 		(function () {
