@@ -21,6 +21,7 @@
 	<div class="divider"><span>Notes &amp; Preprints</span></div>
 
 	<div class="works">
-		{% for note in site.data.preprints %}{% include content/preprint.html item=note %}{% endfor %}
+		{% assign ptotal = site.data.preprints.size %}
+		{% for note in site.data.preprints %}{% assign pnum = ptotal | minus: forloop.index0 %}{% include content/preprint.html item=note index=pnum %}{% endfor %}
 	</div>
 </div><!-- /.blurb -->

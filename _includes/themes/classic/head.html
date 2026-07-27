@@ -1,3 +1,6 @@
-{% comment %} "classic" style: original look — local Fontin fonts. {% endcomment %}
-<link rel="stylesheet" type="text/css" href="/css/classic.css">
+{% comment %} "classic" style: original look — local Fontin fonts. The id lets
+the client-side style switcher (see default.html) enable/disable this
+stylesheet without a rebuild; it starts disabled unless classic is the
+site-wide default, so only one theme's rules are ever active at once. {% endcomment %}
+<link rel="stylesheet" type="text/css" id="theme-css-classic" href="/css/classic.css"{% unless site.style == "classic" %} disabled{% endunless %}>
 <link rel="stylesheet" type="text/css" href="/css/fonts/stylesheet.css">

@@ -17,8 +17,8 @@ portrait_alt:     "Ritam Bhaumik at Versailles"
 portrait_caption: "R. Bhaumik"
 
 # Curriculum vitae (linked from the bio).
-cv:         "/files/ritam-CV-feb26.pdf"
-cv_updated: "February 2026"
+cv:         "/files/ritam-CV-jul26.pdf"
+cv_updated: "July 2026"
 
 # Contact details, rendered by every style's contact page.
 #   label  short heading; a style may append its own ": " etc.

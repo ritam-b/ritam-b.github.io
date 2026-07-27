@@ -14,6 +14,6 @@
 {% assign _abs = site.data.abstracts[include.item.eprint] | default: site.data.abstracts[include.item.doi] %}
 <p{% if include.index %} data-index="{{ include.index }}"{% endif %}{% if _abs %} data-abstract="{{ _abs | strip | escape }}"{% endif %}>
 	<em>{{ include.item.title }}</em>.<br>
-	<strong>{{ include.item.venue }}</strong>{% if include.item.to_appear %} (to appear){% endif %}.<br>
-	{% if include.item.coauthors %}(with {{ include.item.coauthors }}){% endif %}{% if include.item.doi %} <a class="doi-link" href="https://doi.org/{{ include.item.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}{% if include.item.eprint %} <a class="eprint-link" href="https://eprint.iacr.org/{{ include.item.eprint }}" target="_blank" rel="noopener noreferrer">ePrint</a>{% endif %}
+	<strong>{{ include.item.venue }}</strong>{% if include.item.to_appear %} (to appear){% endif %}.{% if include.item.doi %} <a class="doi-link" href="https://doi.org/{{ include.item.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}{% if include.item.eprint %} <a class="eprint-link" href="https://eprint.iacr.org/{{ include.item.eprint }}" target="_blank" rel="noopener noreferrer">ePrint</a>{% endif %}{% if include.item.coauthors %}<br>
+	(with {{ include.item.coauthors }}){% endif %}
 </p>
