@@ -109,7 +109,7 @@ sub read_existing {
 
 # --- gather abstracts -------------------------------------------------------
 my %abstracts;
-my ($eprint_hits, $crossref_hits, $misses) = (0, 0, 0);
+my ($eprint_hits, $crossref_hits, $springer_hits, $misses) = (0, 0, 0, 0);
 
 if ($FROM_JSON) {
     # Convert an existing JSON blob straight to YAML (no network fetch).
@@ -150,6 +150,10 @@ if ($FROM_JSON) {
             $abstract = abstract_from_crossref($w->{doi});
             $crossref_hits++ if $abstract;
         }
+        if (!$abstract && $w->{doi}) {
+            $abstract = abstract_from_springer($w->{doi});
+            $springer_hits++ if $abstract;
+        }
         if ($abstract) {
             $abstracts{$key} = $abstract;
             printf STDERR "  ok   %-14s %s\n", $key, snippet($w->{title});
@@ -173,25 +177,31 @@ for my $key (sort keys %abstracts) {
 close $out;
 
 printf STDERR "\nWrote %s: %d entries%s\n", $OUT, scalar(keys %abstracts),
-    $FROM_JSON ? "" : sprintf(" (%d ePrint, %d CrossRef, %d without an abstract)",
-                              $eprint_hits, $crossref_hits, $misses);
+    $FROM_JSON ? "" : sprintf(" (%d ePrint, %d CrossRef, %d Springer, %d without an abstract)",
+                              $eprint_hits, $crossref_hits, $springer_hits, $misses);
 
 # --- helpers ----------------------------------------------------------------
 sub strip_quotes { my $s = shift; $s =~ s/^["']//; $s =~ s/["']$//; return $s; }
 sub snippet { my $t = shift // ""; return length($t) > 48 ? substr($t,0,45)."..." : $t; }
 
+my $UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+       . "(KHTML, like Gecko) Chrome/124.0 Safari/537.36";
+
 sub http_get {
     my $url = shift;
-    my $body = `curl -sL --max-time 30 "$url"`;
+    my $body = `curl -sL --max-time 40 -A "$UA" "$url"`;
     return undef unless defined $body && length $body;
     return decode("UTF-8", $body, Encode::FB_DEFAULT);  # bytes -> characters
 }
 
 sub decode_entities {
     my $s = shift;
-    $s =~ s/&amp;/&/g;   $s =~ s/&lt;/</g;    $s =~ s/&gt;/>/g;
-    $s =~ s/&quot;/"/g;  $s =~ s/&#0?39;/'/g; $s =~ s/&apos;/'/g;
-    $s =~ s/&nbsp;/ /g;
+    $s =~ s/&#x([0-9a-fA-F]+);/chr(hex($1))/ge;  # hex numeric refs
+    $s =~ s/&#(\d+);/chr($1)/ge;                  # decimal numeric refs
+    $s =~ s/&lt;/</g;    $s =~ s/&gt;/>/g;
+    $s =~ s/&quot;/"/g;  $s =~ s/&apos;/'/g;      $s =~ s/&nbsp;/ /g;
+    $s =~ s/\x{00A0}/ /g;                          # non-breaking space -> space
+    $s =~ s/&amp;/&/g;                             # ampersand last
     return $s;
 }
 
@@ -220,5 +230,24 @@ sub abstract_from_crossref {
     $a =~ s/<[^>]+>//g;
     $a = decode_entities($a);
     $a =~ s/\s+/ /g;
+    return (length $a) ? $a : undef;
+}
+
+# Springer landing page (last resort for papers with no ePrint and no CrossRef
+# abstract): the abstract sits in <div ... id="Abs1-content"> ... </div>.
+sub abstract_from_springer {
+    my $doi = shift;
+    my $html = http_get("https://doi.org/$doi") or return undef;
+    return undef unless $html =~ m{id="Abs1-content"[^>]*>(.*?)</div>}s;
+    my $a = $1;
+    $a =~ s{</p>\s*<p[^>]*>}{\n\n}gi;   # keep paragraph breaks
+    $a =~ s/<[^>]+>//g;                  # strip tags
+    $a = decode_entities($a);
+    # Strip Springer author-query annotations that leak into the abstract markup:
+    # a "query" marker (from <span class="u-sans-serif">query</span>) glued before
+    # a "Please ..." sentence, e.g. "...queryPlease check and confirm ...codes.".
+    # Real crypto abstracts never contain "queryPlease", so this is safe.
+    $a =~ s/query\s*Please\b[^.]*\.\s*//gi;
+    $a =~ s/[ \t]+\n/\n/g;
     return (length $a) ? $a : undef;
 }
