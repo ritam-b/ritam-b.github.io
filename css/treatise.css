@@ -276,9 +276,15 @@ footer a {
 
 footer a:hover { color: var(--rub); }
 
+.toggle-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 0 14px;
+}
+
 .theme-toggle {
     display: block;
-    margin: 0 auto 14px;
     padding: 3px 13px;
     font-family: var(--display);
     font-variant: small-caps;

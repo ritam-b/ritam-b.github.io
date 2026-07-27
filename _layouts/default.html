@@ -83,27 +83,30 @@
 		{% include themes/treatise/footer.html %}
 	</div>
 
-	{% comment %} Client-side style switcher. Fixed placement so it reads the
-	same regardless of which theme is currently showing. {% endcomment %}
-	<button type="button" id="style-switch"
-		style="position:fixed;bottom:14px;left:14px;z-index:999;padding:5px 11px;font-size:12px;font-family:Arial,sans-serif;background:#fff;color:#333;border:1px solid #999;border-radius:4px;cursor:pointer;opacity:0.85;">
-		{% if site.style == "classic" %}Treatise style{% else %}Classic style{% endif %}
-	</button>
+	{% comment %} Client-side style switcher. The button itself lives in each
+	theme's footer (next to the day/night toggle in treatise); this just wires
+	up whichever copy is in the DOM. {% endcomment %}
 	<script>
 		(function () {
-			var btn = document.getElementById('style-switch');
+			var buttons = document.querySelectorAll('.style-switch-btn');
 			var root = document.documentElement;
 			var c = document.getElementById('theme-css-classic');
 			var t = document.getElementById('theme-css-treatise');
-			function label(style) { return style === 'classic' ? 'Treatise style' : 'Classic style'; }
-			btn.textContent = label(root.getAttribute('data-style'));
-			btn.addEventListener('click', function () {
-				var next = root.getAttribute('data-style') === 'classic' ? 'treatise' : 'classic';
-				root.setAttribute('data-style', next);
-				if (c) c.disabled = (next !== 'classic');
-				if (t) t.disabled = (next !== 'treatise');
-				localStorage.setItem('site-style', next);
-				btn.textContent = label(next);
+			function label(style) { return style === 'classic' ? 'New look' : 'Classic look'; }
+			function sync() {
+				var text = label(root.getAttribute('data-style'));
+				buttons.forEach(function (b) { b.textContent = text; });
+			}
+			sync();
+			buttons.forEach(function (btn) {
+				btn.addEventListener('click', function () {
+					var next = root.getAttribute('data-style') === 'classic' ? 'treatise' : 'classic';
+					root.setAttribute('data-style', next);
+					if (c) c.disabled = (next !== 'classic');
+					if (t) t.disabled = (next !== 'treatise');
+					localStorage.setItem('site-style', next);
+					sync();
+				});
 			});
 		})();
 	</script>
