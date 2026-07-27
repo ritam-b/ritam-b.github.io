@@ -10,7 +10,7 @@
  *   abstract text. This script attaches to exactly those elements. Entries
  *   without a `data-abstract` are left completely alone (no listeners, no
  *   visual change), so the feature lights up paper-by-paper as abstracts are
- *   filled into _data/abstracts.json.
+ *   filled into _data/abstracts.yml.
  *
  * Interaction:
  *   - Mouse: pause on an entry for HOVER_DELAY ms -> its abstract panel
@@ -24,6 +24,11 @@
  *
  * The panel's styles are injected by this script (see STYLE below) so the
  * feature stays fully self-contained and doesn't depend on any theme CSS.
+ *
+ * LaTeX in the abstracts ($...$ inline, $$...$$ or \[...\] display) is rendered
+ * with MathJax, lazy-loaded from a CDN the first time any abstract is expanded
+ * (see ensureMathJax). Visitors who never open an abstract never load it, and
+ * if it can't load the abstract simply shows its raw TeX — no breakage.
  */
 (function () {
 	"use strict";
@@ -83,6 +88,54 @@
 		(document.head || document.documentElement).appendChild(s);
 	}
 
+	// --- LaTeX rendering (MathJax, lazy-loaded on first expand) -------------
+	var MATHJAX_SRC = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js";
+	var mjState = "none"; // none | loading | ready
+	var mjQueue = [];
+
+	// Load MathJax once, on demand, then run cb. ePrint abstracts use $...$ for
+	// inline math, so that delimiter is enabled (off by default in MathJax).
+	function ensureMathJax(cb) {
+		if (mjState === "ready") { cb(); return; }
+		mjQueue.push(cb);
+		if (mjState === "loading") return;
+		mjState = "loading";
+		window.MathJax = {
+			tex: {
+				inlineMath: [["$", "$"], ["\\(", "\\)"]],
+				displayMath: [["$$", "$$"], ["\\[", "\\]"]]
+			},
+			options: { enableMenu: false },
+			startup: {
+				typeset: false, // typeset panels on demand, not the whole page
+				ready: function () {
+					window.MathJax.startup.defaultReady();
+					window.MathJax.startup.promise.then(function () {
+						mjState = "ready";
+						var q = mjQueue; mjQueue = [];
+						q.forEach(function (f) { f(); });
+					});
+				}
+			}
+		};
+		var s = document.createElement("script");
+		s.src = MATHJAX_SRC;
+		s.async = true;
+		s.onerror = function () { mjState = "none"; mjQueue = []; }; // keep raw TeX
+		(document.head || document.documentElement).appendChild(s);
+	}
+
+	// Typeset a panel's math exactly once.
+	function renderMath(panel) {
+		if (panel._mathDone) return;
+		panel._mathDone = true;
+		ensureMathJax(function () {
+			if (window.MathJax && window.MathJax.typesetPromise) {
+				window.MathJax.typesetPromise([panel]).catch(function () {});
+			}
+		});
+	}
+
 	// --- per-entry setup ----------------------------------------------------
 	function setupEntry(entry) {
 		var text = (entry.getAttribute("data-abstract") || "").trim();
@@ -115,6 +168,7 @@
 			closeOthers(entry);
 			panel.classList.add("pub-abstract-open");
 			entry.setAttribute("aria-expanded", "true");
+			renderMath(panel); // render LaTeX the first time this panel opens
 		}
 
 		function close() {
