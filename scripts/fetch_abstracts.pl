@@ -243,16 +243,22 @@ sub abstract_from_crossref {
 sub abstract_from_springer {
     my $doi = shift;
     my $html = http_get("https://doi.org/$doi") or return undef;
-    return undef unless $html =~ m{id="Abs1-content"[^>]*>(.*?)</div>}s;
+    # Capture the whole abstract section (up to </section>), not just the first
+    # </div>: Springer wraps display equations in their own <div>, so stopping
+    # at the first </div> would truncate the abstract at the first equation.
+    return undef unless $html =~ m{id="Abs1-content"[^>]*>(.*?)</section>}s;
     my $a = $1;
-    $a =~ s{</p>\s*<p[^>]*>}{\n\n}gi;   # keep paragraph breaks
-    $a =~ s/<[^>]+>//g;                  # strip tags
+    $a =~ s{</p>}{\n\n}gi;               # paragraph breaks
+    $a =~ s{</div>}{\n\n}gi;             # equation / block breaks
+    $a =~ s/<[^>]+>//g;                  # strip remaining (inline) tags
     $a = decode_entities($a);
     # Strip Springer author-query annotations that leak into the abstract markup:
     # a "query" marker (from <span class="u-sans-serif">query</span>) glued before
     # a "Please ..." sentence, e.g. "...queryPlease check and confirm ...codes.".
     # Real crypto abstracts never contain "queryPlease", so this is safe.
     $a =~ s/query\s*Please\b[^.]*\.\s*//gi;
-    $a =~ s/[ \t]+\n/\n/g;
+    $a =~ s/[ \t]+\n/\n/g;               # trailing spaces per line
+    $a =~ s/\n{3,}/\n\n/g;               # collapse blank-line runs
+    $a =~ s/^\s+//; $a =~ s/\s+$//;
     return (length $a) ? $a : undef;
 }

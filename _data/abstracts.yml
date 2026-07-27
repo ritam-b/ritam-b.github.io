@@ -7,7 +7,11 @@
 "10.1007/s10623-021-00913-4": |2-
   Coron et al. in TCC 2010 proposed a 2n-bit permutation by using an n-bit ideal cipher with an n-bit key in a Feistel type structure for three rounds (in: Micciancio (ed) Theory of cryptography, Springer, Berlin, Heidelberg, 2010). The authors showed n/2-bit indifferentiable security. In this paper we improve their result by showing \((n-2\log n)\)-bit indifferentiable security, by using more sophisticated counting techniques. This result will help us design ideal permutations using block ciphers and deploy them in permutation-based cryptosystems such as sponge constructions.
 "10.1007/s10623-023-01288-4": |2-
-  In this paper, we study the security of the Key-Alternating Feistel (KAF) ciphers, a class of key alternating ciphers with the Feistel structure, where each round of the cipher is instantiated with n-bit public round permutation \(P_i\), namely the i-th round of the cipher maps $$\begin{aligned} (X_L, X_R) \mapsto (X_R, P_i(X_R \oplus K_i) \oplus K_i \oplus X_L). \end{aligned}$$
+  In this paper, we study the security of the Key-Alternating Feistel (KAF) ciphers, a class of key alternating ciphers with the Feistel structure, where each round of the cipher is instantiated with n-bit public round permutation \(P_i\), namely the i-th round of the cipher maps
+
+  $$\begin{aligned} (X_L, X_R) \mapsto (X_R, P_i(X_R \oplus K_i) \oplus K_i \oplus X_L). \end{aligned}$$
+
+  We have shown that our 5 round construction with independent round permutations and independent round keys achieves 2n/3-bit security in the random permutation model, i.e., the setting where the adversary is allowed to make forward and inverse queries to the round permutations in a black box way.
 "2015/1148": |2-
   In CRYPTO 2003, Halevi and Rogaway proposed CMC, a tweakable enciphering scheme (TES) based on a blockcipher. It requires two blockcipher keys and it is not inverse-free (i.e., the decryption algorithm uses the inverse (decryption) of the underlying blockcipher). We present here a new inverse-free, single-keyed TES. Our construction is a tweakable strong pseudorandom permutation (tsprp), i.e., it is secure against chosen-plaintext-ciphertext adversaries assuming that the underlying blockcipher is a pseudorandom permutation (prp), i.e., secure against chosen-plaintext adversaries. In comparison, sprp assumption of the blockcipher is required for the sprp security of CMC. Our scheme can be viewed as a mixture of type-1 and type-3 Feistel cipher and so we call it FMix or mixed-type Feistel cipher.
 "2015/485": |2-
