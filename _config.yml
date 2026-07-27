@@ -29,6 +29,13 @@ defaults:
         path: /images/photo-for-website.jpg
         width: 668
         height: 782
+  # Sandbox is a staging ground for experimental features — keep everything
+  # under sandbox/ out of the sitemap (jekyll-sitemap honors sitemap: false).
+  # noindex for these pages is set in _layouts/default-test.html.
+  - scope:
+      path: "sandbox"
+    values:
+      sitemap: false
 
 plugins:
   - jekyll-seo-tag

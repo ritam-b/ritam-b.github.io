@@ -4,6 +4,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% comment %} Sandbox is a staging ground for experimental features; keep it
+	out of search results. (Sitemap exclusion is handled in _config.yml.) {% endcomment %}
+	<meta name="robots" content="noindex, nofollow">
 	<title>{{ page.title }} &middot; Ritam Bhaumik</title>
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 	{% include themes/treatise/head.html %}
